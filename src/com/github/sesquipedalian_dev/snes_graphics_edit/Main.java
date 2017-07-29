@@ -1,23 +1,34 @@
 package com.github.sesquipedalian_dev.snes_graphics_edit;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.util.Scanner;
 
 public class Main extends Application {
     // provide access to the scene for lookups
     public static Scene theScene;
+    public static Stage theStage;
+    public static EditingData editingData;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        theStage = primaryStage;
+        // stop manual close attempts - make 'em go through the menu
+        theStage.setOnCloseRequest(event -> {
+            // nop
+            event.consume();
+        });
+
         Parent root = FXMLLoader.load(getClass().getResource("fxml/window.fxml"));
         primaryStage.setTitle("SNES Graphics Editor");
-        theScene = new Scene(root, 800, 600);
+        theScene = new Scene(root, 625, 445);
         primaryStage.setScene(theScene);
         primaryStage.setResizable(false);
         primaryStage.show();
@@ -78,6 +89,6 @@ public class Main extends Application {
         System.out.println(String.format("read in editing data: %d %d %d", ed2.getTileRows(), ed.getBitDepth(), ed.currentPalettes()));
 
 
-        //launch(args);
+        launch(args);
     }
 }
