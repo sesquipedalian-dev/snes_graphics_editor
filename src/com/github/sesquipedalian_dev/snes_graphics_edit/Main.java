@@ -1,13 +1,14 @@
 package com.github.sesquipedalian_dev.snes_graphics_edit;
 
+import com.github.sesquipedalian_dev.snes_graphics_edit.data.EditingData;
+import com.github.sesquipedalian_dev.snes_graphics_edit.data.Palette;
+import com.github.sesquipedalian_dev.snes_graphics_edit.data.Tile;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 import java.util.Scanner;
 
@@ -15,15 +16,13 @@ public class Main extends Application {
     // provide access to the scene for lookups
     public static Scene theScene;
     public static Stage theStage;
-    public static EditingData editingData;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         theStage = primaryStage;
         // stop manual close attempts - make 'em go through the menu
         theStage.setOnCloseRequest(event -> {
-            // nop
-            event.consume();
+            event.consume(); // make the event NOP
         });
 
         Parent root = FXMLLoader.load(getClass().getResource("fxml/window.fxml"));
@@ -34,8 +33,15 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-
     public static void main(String[] args) throws Exception {
+        if((args.length > 0) && args[0].equals("-t")) {
+            runTests();
+        } else {
+            launch(args);
+        }
+    }
+
+    public static void runTests() throws Exception {
         Tile tile = new Tile(2);
         for(int x = 1; x <= 8; ++x) {
             tile.selectColor(x, 1, 4);
@@ -87,8 +93,5 @@ public class Main extends Application {
 
         EditingData ed2 = EditingData.fromFile("HornyGoat.inc");
         System.out.println(String.format("read in editing data: %d %d %d", ed2.getTileRows(), ed.getBitDepth(), ed.currentPalettes()));
-
-
-        launch(args);
     }
 }
