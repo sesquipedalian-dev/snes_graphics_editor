@@ -29,8 +29,17 @@ import java.util.regex.MatchResult;
 public class EditingData {
     public EditingData(int bitDepth) {
         this.bitDepth = bitDepth;
-        this.palettes = new ArrayList<Palette>(maxPalettes());
+        this.palettes = new ArrayList<>(maxPalettes());
         this.tiles = new Stack<>();
+        this.filename = "";
+    }
+
+    private String filename;
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
+    public String getFilename() {
+        return filename;
     }
 
     public static EditingData fromFile(String filename) throws IOException {
@@ -95,6 +104,7 @@ public class EditingData {
             }
         }
 
+        retVal.filename = filename;
         return retVal;
     }
 

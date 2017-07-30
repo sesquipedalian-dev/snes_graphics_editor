@@ -3,7 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -25,21 +25,22 @@
             <items>
               <MenuItem mnemonicParsing="false" onAction="#menuNew" text="New">
                      <accelerator>
-                        <KeyCodeCombination alt="UP" code="N" control="ANY" meta="UP" shift="UP" shortcut="UP" />
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
                   <MenuItem mnemonicParsing="false" onAction="#menuOpen" text="Open">
                      <accelerator>
-                        <KeyCodeCombination alt="UP" code="O" control="ANY" meta="UP" shift="UP" shortcut="UP" />
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
                   <MenuItem mnemonicParsing="false" onAction="#menuSave" text="Save">
                      <accelerator>
-                        <KeyCodeCombination alt="UP" code="S" control="ANY" meta="UP" shift="UP" shortcut="UP" />
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#menuSaveAs" text="Save As" />
                   <MenuItem mnemonicParsing="false" onAction="#menuExit" text="Close">
                      <accelerator>
-                        <KeyCodeCombination alt="ANY" code="F4" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                        <KeyCodeCombination alt="DOWN" code="F4" control="UP" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
             </items>
@@ -234,7 +235,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ListView prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" />
+            <ChoiceBox fx:id="bitDepthSel" prefWidth="150.0" GridPane.columnIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bit Depth:">
                <font>
                   <Font size="18.0" />
