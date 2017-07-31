@@ -164,15 +164,15 @@
             <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" text="Button" />
          </children>
       </FlowPane>
-      <AnchorPane layoutX="303.0" layoutY="54.0" prefHeight="280.0" prefWidth="280.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="54.0">
+      <AnchorPane layoutX="303.0" layoutY="54.0" prefHeight="280.0" prefWidth="260.0" AnchorPane.rightAnchor="62.0" AnchorPane.topAnchor="54.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Edit:" AnchorPane.topAnchor="0.0">
                <font>
                   <Font size="18.0" />
                </font></Text>
-            <Pane minHeight="80.0" minWidth="80.0" style="-fx-border-width: 2; -fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="260.0" prefWidth="260.0" style="-fx-border-width: 2; -fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
                <children>
-                  <Canvas fx:id="tileChrCanvas" height="250.0" width="280.0" />
+                  <Canvas fx:id="tileChrCanvas" height="260.0" width="260.0" />
                </children>
             </Pane>
          </children>
@@ -239,6 +239,12 @@
          <children>
             <ChoiceBox fx:id="bitDepthSel" prefWidth="150.0" GridPane.columnIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bit Depth:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <ChoiceBox fx:id="zoomSel" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zoom:" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>

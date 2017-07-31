@@ -100,9 +100,9 @@ public class EditingData {
                     // if we get a new row, add the new row
                     retVal.addTileRow();
                     nextTileY = 0;
-                } else if (line.matches("^\\s*\\.db")) {
+                } else if (line.matches("^\\s*\\.db.*")) {
                     // if we get a new tile data, add it
-                    Tile t = Tile.fromString(new Scanner(line), retVal.getBitDepth());
+                    TileCHR t = TileCHR.fromString(new Scanner(line), retVal.getBitDepth());
                     retVal.setTile(retVal.getTileRows() - 1, nextTileY, t);
                     nextTileY++;
                 } else if (line.matches("^\\s*;end")) {
@@ -139,7 +139,7 @@ public class EditingData {
         out.println();
         for(int x = 0; x < tiles.size(); ++x) {
             out.println("; tile row " + x);
-            ArrayList<Tile> row = tiles.get(x);
+            ArrayList<TileCHR> row = tiles.get(x);
 
             for(int y = 0; y < TILES_PER_ROW; ++y) {
                 out.println("; tile " + ((x * TILES_PER_ROW) + y));
@@ -188,16 +188,16 @@ public class EditingData {
     // SNES stores this many 8x8 tiles in a 'row' in VRAM.  relevant to wrapping bigger tiles than 8x8
     // e.g. the tiles involved in a 16x16 sprite starting at <tile> are: tile, tile+1, tile+16, tile+17.
     public final int TILES_PER_ROW = 16;
-    private Stack<ArrayList<Tile>> tiles;
+    private Stack<ArrayList<TileCHR>> tiles;
 
     public int getTileRows() {
         return tiles.size();
     }
 
     public void addTileRow() {
-        ArrayList<Tile> newRow = new ArrayList<Tile>(TILES_PER_ROW);
+        ArrayList<TileCHR> newRow = new ArrayList<TileCHR>(TILES_PER_ROW);
         for(int i = 0; i < TILES_PER_ROW; ++i) {
-            Tile newTile = new Tile(bitDepth);
+            TileCHR newTile = new TileCHR(bitDepth);
             newRow.add(newTile);
         }
         tiles.push(newRow);
@@ -208,7 +208,7 @@ public class EditingData {
     }
 
     // 0-indexed
-    public Tile getTile(int x, int y) {
+    public TileCHR getTile(int x, int y) {
         if(x < 0 || x > getTileRows()) {
             throw new IndexOutOfBoundsException("X between [0, " + getTileRows() + ")");
         }
@@ -219,7 +219,7 @@ public class EditingData {
     }
 
     // 0-indexed
-    public void setTile(int x, int y, Tile t) {
+    public void setTile(int x, int y, TileCHR t) {
         if(x < 0 || x > getTileRows()) {
             throw new IndexOutOfBoundsException("X between [0, " + getTileRows() + ")");
         }

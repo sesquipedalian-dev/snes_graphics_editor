@@ -21,8 +21,6 @@ import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.event.EventType;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.ColorPicker;
@@ -44,13 +42,17 @@ public class PaletteCanvasController {
     private int selectedColor = 0;
     private boolean enableColorPickerOnChange = true;
 
+    public int getSelectedPalette() {
+        return selectedPalette;
+    }
+
     public PaletteCanvasController(Canvas canvas, ColorPicker colorPicker) {
         this.canvas = canvas;
         this.colorPicker = colorPicker;
 
         Timeline timeline = new Timeline();
         KeyFrame keyFrame = new KeyFrame(
-            javafx.util.Duration.millis(1000 / 60), // tick at 60 hz
+            javafx.util.Duration.millis(1000 / 20), // tick at 20 hz
             event -> drawPalette(event)
         );
         timeline.getKeyFrames().setAll(keyFrame);
@@ -107,9 +109,6 @@ public class PaletteCanvasController {
             System.out.println(String.format("Mouse event {%d}/{%d}", mouseX, mouseY));
 
             selectColor(paletteIndex, indexInPalette);
-        } else if (e.getButton() == MouseButton.SECONDARY) {
-            // right click = edit color
-
         }
     }
 

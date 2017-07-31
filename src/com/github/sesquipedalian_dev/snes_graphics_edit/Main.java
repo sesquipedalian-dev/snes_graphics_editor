@@ -2,7 +2,7 @@ package com.github.sesquipedalian_dev.snes_graphics_edit;
 
 import com.github.sesquipedalian_dev.snes_graphics_edit.data.EditingData;
 import com.github.sesquipedalian_dev.snes_graphics_edit.data.Palette;
-import com.github.sesquipedalian_dev.snes_graphics_edit.data.Tile;
+import com.github.sesquipedalian_dev.snes_graphics_edit.data.TileCHR;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -42,10 +42,10 @@ public class Main extends Application {
     }
 
     public static void runTests() throws Exception {
-        Tile tile = new Tile(2);
-        for(int x = 1; x <= 8; ++x) {
+        TileCHR tile = new TileCHR(2);
+        for(int x = 0; x < TileCHR.TILE_DIM; ++x) {
+            tile.selectColor(x, 0, 4);
             tile.selectColor(x, 1, 4);
-            tile.selectColor(x, 2, 4);
         }
 
         tile.serializeToStream(System.out);
@@ -70,7 +70,7 @@ public class Main extends Application {
 
         String tileInput = ".db $C0, $C0, $C0, $C0, $C0, $C0, $C0, $C0, $C0, $C0, $C0, $C0, $C0, $C0, $C0, $C0";
         try {
-            Tile tile2 = Tile.fromString(new Scanner(tileInput), 2);
+            TileCHR tile2 = TileCHR.fromString(new Scanner(tileInput), 2);
             tile2.serializeToStream(System.out);
         } catch (Exception e) {
             System.out.println("exception: " + e);
@@ -85,7 +85,7 @@ public class Main extends Application {
             ed.addPalette(p3);
         }
 
-        Tile t3 = Tile.fromString(new Scanner(tileInput), 2);
+        TileCHR t3 = TileCHR.fromString(new Scanner(tileInput), 2);
         ed.addTileRow();
         ed.setTile(0, 0, t3);
 

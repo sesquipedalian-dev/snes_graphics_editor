@@ -72,19 +72,32 @@ public class GUIController {
     public Canvas paletteCanvas;
     @FXML
     public ColorPicker colorPicker;
+    @FXML
+    public ChoiceBox zoomSel;
+    @FXML
+    public Canvas tileChrCanvas;
 
     public void initialize() {
         System.out.println("Initializing GUIController");
-        ObservableList<String> items = FXCollections.observableArrayList(
+
+        ObservableList<String> bitDepthItems = FXCollections.observableArrayList(
             "1 (2 color)", "2 (4 color)", "4 (16 color)", "8 (256 color)"
         );
-        bitDepthSel.setItems(items);
-        SingleSelectionModel<String> sm = bitDepthSel.getSelectionModel();
-        sm.selectedIndexProperty().addListener(bitDepthListener);
-        sm.select(1);
+        bitDepthSel.setItems(bitDepthItems);
+        SingleSelectionModel<String> bitDepthSm = bitDepthSel.getSelectionModel();
+        bitDepthSm.selectedIndexProperty().addListener(bitDepthListener);
+        bitDepthSm.select(1);
 
-        // set up palette controller with a periodic callback
-        new PaletteCanvasController(paletteCanvas, colorPicker);
+        ObservableList<String> tileZoomItems = FXCollections.observableArrayList(
+            "1x", "2x", "4x", "8x", "16x"
+        );
+        zoomSel.setItems(tileZoomItems);
+        SingleSelectionModel<String> tileZoomSm = zoomSel.getSelectionModel();
+        tileZoomSm.select(4);
+
+        // set up other GUI controllers
+        PaletteCanvasController pcc = new PaletteCanvasController(paletteCanvas, colorPicker);
+        new TileCharacterCanvasController(zoomSel, tileChrCanvas, pcc);
     }
 
     @FXML
