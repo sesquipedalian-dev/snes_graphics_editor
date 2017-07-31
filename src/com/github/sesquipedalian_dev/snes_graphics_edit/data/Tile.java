@@ -46,6 +46,7 @@ public class Tile {
 
     // set a specified pixel in this tile.  color is modded if it exceeds the amount allowed by bit depth.
     // the color that is actually set is returned.  Use 1-based x / y, 1-based color
+    // TODO 1-based index is dumb, make it 0
     public int selectColor(int x, int y, int color) {
         if(x > TILE_DIM || y > TILE_DIM || x < 1 || y < 1) {
             throw new IndexOutOfBoundsException("Pick a position within 0 < POSITION < TILE_DIM: " + TILE_DIM + "\n");

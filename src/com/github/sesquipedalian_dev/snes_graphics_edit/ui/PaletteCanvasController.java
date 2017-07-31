@@ -16,42 +16,81 @@
 package com.github.sesquipedalian_dev.snes_graphics_edit.ui;
 
 import com.github.sesquipedalian_dev.snes_graphics_edit.data.EditingData;
+import com.github.sesquipedalian_dev.snes_graphics_edit.data.Palette;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.event.EventType;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.ColorPicker;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
+
 
 /**
  * PaletteCanvasController 
  */
-public class PaletteCanvasController implements EventHandler<ActionEvent> {
+public class PaletteCanvasController {
     public static final int COLORS_PER_ROW = 16;
     public static final int ROWS_OF_COLORS = 16;
     public static final int CANVAS_SIZE_OF_COLOR = 17;
 
     private Canvas canvas;
+    private ColorPicker colorPicker;
     private int selectedPalette = 0;
     private int selectedColor = 0;
+    private boolean enableColorPickerOnChange = true;
 
-    public PaletteCanvasController(Canvas canvas) {
+    public PaletteCanvasController(Canvas canvas, ColorPicker colorPicker) {
         this.canvas = canvas;
+        this.colorPicker = colorPicker;
 
         Timeline timeline = new Timeline();
         KeyFrame keyFrame = new KeyFrame(
             javafx.util.Duration.millis(1000 / 60), // tick at 60 hz
-            this
+            event -> drawPalette(event)
         );
         timeline.getKeyFrames().setAll(keyFrame);
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
+
+        canvas.addEventHandler(
+            MouseEvent.MOUSE_CLICKED,
+            event -> handleMouse(event)
+        );
+
+        colorPicker.setOnAction(event -> {
+            if(enableColorPickerOnChange) {
+                changeSelectedColor();
+            }
+        });
     }
 
-    @Override
-    public void handle(ActionEvent event) {
+    private void changeSelectedColor() {
+        Color c = colorPicker.getValue();
+        EditingData ed = EditingData.getInstance();
+        if(ed != null) {
+            if(selectedPalette < ed.currentPalettes()) {
+                Palette p = ed.getPalette(selectedPalette);
+                p.selectColor(selectedColor, c);
+            }
+        }
+    }
+
+    private void handleMouse(MouseEvent e) {
+        if(e.getButton() == MouseButton.PRIMARY) {
+            // left click = select different palette / color
+        } else if (e.getButton() == MouseButton.SECONDARY) {
+            // right click = edit color
+
+        }
+    }
+
+    private void drawPalette(ActionEvent event) {
         // clear the canvas
         GraphicsContext gc = canvas.getGraphicsContext2D();
         gc.setFill(Color.WHITE);
@@ -88,27 +127,32 @@ public class PaletteCanvasController implements EventHandler<ActionEvent> {
                     gc.fillRect(rectX, rectY, CANVAS_SIZE_OF_COLOR, CANVAS_SIZE_OF_COLOR);
 
                     if(isSelectedPalette) {
-                       gc.setStroke(Color.RED);
+                        gc.setStroke(Color.RED);
 
-                       // if first color in palette draw left side
-                       if(indexInPalette == 0) {
-                           gc.strokeLine(rectX, rectY, rectX, rectY + CANVAS_SIZE_OF_COLOR);
-                       }
+                        // if first color in palette draw left side
+                        if(indexInPalette == 0) {
+                            gc.strokeLine(rectX, rectY, rectX, rectY + CANVAS_SIZE_OF_COLOR);
+                        }
 
-                       // draw top and bottom sides
-                       gc.strokeLine(rectX, rectY, rectX + CANVAS_SIZE_OF_COLOR, rectY);
-                       gc.strokeLine(rectX, rectY + CANVAS_SIZE_OF_COLOR, rectX + CANVAS_SIZE_OF_COLOR, rectY + CANVAS_SIZE_OF_COLOR);
+                        // draw top and bottom sides
+                        gc.strokeLine(rectX, rectY, rectX + CANVAS_SIZE_OF_COLOR, rectY);
+                        gc.strokeLine(rectX, rectY + CANVAS_SIZE_OF_COLOR, rectX + CANVAS_SIZE_OF_COLOR, rectY + CANVAS_SIZE_OF_COLOR);
 
-                       // if last color in palette draw right side
-                       if(indexInPalette == ((Math.pow(2, bitDepth)) - 1)) {
-                           gc.strokeLine(rectX + CANVAS_SIZE_OF_COLOR, rectY, rectX + CANVAS_SIZE_OF_COLOR, rectY + CANVAS_SIZE_OF_COLOR);
-                       }
+                        // if last color in palette draw right side
+                        if(indexInPalette == ((Math.pow(2, bitDepth)) - 1)) {
+                            gc.strokeLine(rectX + CANVAS_SIZE_OF_COLOR, rectY, rectX + CANVAS_SIZE_OF_COLOR, rectY + CANVAS_SIZE_OF_COLOR);
+                        }
                     }
 
                     if(isSelectedColor) {
-                      gc.setStroke(Color.WHITE);
-                      gc.setLineWidth(1);
-                      gc.strokeRect(rectX, rectY + 1, CANVAS_SIZE_OF_COLOR, CANVAS_SIZE_OF_COLOR - 2);
+                        gc.setStroke(Color.WHITE);
+                        gc.setLineWidth(1);
+                        gc.strokeRect(rectX, rectY + 1, CANVAS_SIZE_OF_COLOR, CANVAS_SIZE_OF_COLOR - 2);
+
+                        // also take this opportunity to make sure the color picker is using the proper color
+                        enableColorPickerOnChange = false;
+                        colorPicker.setValue(c);
+                        enableColorPickerOnChange = true;
                     }
                 }
             }

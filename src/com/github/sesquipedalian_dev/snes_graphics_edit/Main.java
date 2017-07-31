@@ -51,10 +51,10 @@ public class Main extends Application {
         tile.serializeToStream(System.out);
 
         Palette p = new Palette(2);
-        p.selectColor(1, Color.BLACK);
-        p.selectColor(2, new Color(0, 1, 1, 1));
-        p.selectColor(3, new Color(1, 0, 0, 1));
-        p.selectColor(4, new Color(1, 1, 0, 1));
+        p.selectColor(0, Color.BLACK);
+        p.selectColor(1, new Color(0, 1, 1, 1));
+        p.selectColor(2, new Color(1, 0, 0, 1));
+        p.selectColor(3, new Color(1, 1, 0, 1));
 
         p.serializeToStream(System.out);
 

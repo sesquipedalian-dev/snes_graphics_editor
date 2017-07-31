@@ -4,6 +4,7 @@
 <?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -251,11 +252,12 @@
                   <Font size="18.0" />
                </font>
             </Text>
-            <ScrollPane prefHeight="50.0" prefWidth="280.0" style="-fx-border-width: 2; -fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <ScrollPane prefHeight="50.0" prefWidth="292.0" style="-fx-border-width: 2; -fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <content>
                   <Canvas fx:id="paletteCanvas" height="272.0" width="272.0" />
                </content>
             </ScrollPane>
+            <ColorPicker fx:id="colorPicker" layoutX="167.0" layoutY="-1.0" style="-fx-color-label-visible: false;" AnchorPane.rightAnchor="0.0" />
          </children>
       </AnchorPane>
    </children>

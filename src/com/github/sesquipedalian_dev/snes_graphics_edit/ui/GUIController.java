@@ -28,6 +28,7 @@ import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.SingleSelectionModel;
 import javafx.stage.FileChooser;
 
@@ -51,6 +52,7 @@ public class GUIController {
         instance = this;
     }
 
+    // when bit depth selector changed, start new editing data
     class BitDepthListener implements ChangeListener<Number> {
         @Override
         public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
@@ -65,9 +67,10 @@ public class GUIController {
 
     @FXML
     public ChoiceBox bitDepthSel;
-
     @FXML
     public Canvas paletteCanvas;
+    @FXML
+    public ColorPicker colorPicker;
 
     public void initialize() {
         System.out.println("Initializing GUIController");
@@ -80,7 +83,7 @@ public class GUIController {
         sm.selectedIndexProperty().addListener(bitDepthListener);
 
         // set up palette controller with a periodic callback
-        new PaletteCanvasController(paletteCanvas);
+        new PaletteCanvasController(paletteCanvas, colorPicker);
     }
 
     @FXML

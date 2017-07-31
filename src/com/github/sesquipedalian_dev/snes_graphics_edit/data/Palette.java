@@ -43,13 +43,13 @@ public class Palette {
         }
     }
 
-    // 1-indexed color selection
+    // 0-indexed color selection
     public void selectColor(int index, Color color) {
-        if(index < 1 || index > colorsSize) {
+        if(index < 0 || index >= colorsSize) {
             throw new IndexOutOfBoundsException("Palette index should be 0 < INDEX < (2 ^ bit depth) ({" + colorsSize + "})");
         }
 
-        colors[index - 1] = color;
+        colors[index] = color;
     }
 
     public Color getColor(int index) {
@@ -107,7 +107,7 @@ public class Palette {
                 int msb = Integer.parseInt(r.group(i + 1), 16);
 
                 Color newColor = Util.snesToJavaColor((msb << 8) & lsb);
-                retVal.selectColor((i + 1) / 2, newColor);
+                retVal.selectColor(((i + 1) / 2 - 1), newColor);
             } catch(NumberFormatException e) {
                 System.out.println("problem parsing a byte {" + e + "}");
             }
