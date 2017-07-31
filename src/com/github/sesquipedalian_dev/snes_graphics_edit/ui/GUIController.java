@@ -80,8 +80,8 @@ public class GUIController {
         );
         bitDepthSel.setItems(items);
         SingleSelectionModel<String> sm = bitDepthSel.getSelectionModel();
-        sm.select(0);
         sm.selectedIndexProperty().addListener(bitDepthListener);
+        sm.select(1);
 
         // set up palette controller with a periodic callback
         new PaletteCanvasController(paletteCanvas, colorPicker);

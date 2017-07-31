@@ -30,7 +30,6 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 
-
 /**
  * PaletteCanvasController 
  */
@@ -70,6 +69,11 @@ public class PaletteCanvasController {
         });
     }
 
+    private void selectColor(int selectedPalette, int selectedColor) {
+        this.selectedPalette = selectedPalette;
+        this.selectedColor = selectedColor;
+    }
+
     private void changeSelectedColor() {
         Color c = colorPicker.getValue();
         EditingData ed = EditingData.getInstance();
@@ -84,6 +88,25 @@ public class PaletteCanvasController {
     private void handleMouse(MouseEvent e) {
         if(e.getButton() == MouseButton.PRIMARY) {
             // left click = select different palette / color
+            int mouseX = (int) e.getX();
+            int mouseY = (int) e.getY();
+
+            int x = mouseY / COLORS_PER_ROW;
+            int y = mouseX / COLORS_PER_ROW;
+
+            int colorsPerPalette = (int) Math.pow(2, EditingData.getInstance().getBitDepth());
+
+            int colorIndex = (x * COLORS_PER_ROW) + y;
+            int paletteIndex = colorIndex / colorsPerPalette;
+            if(paletteIndex >= EditingData.getInstance().currentPalettes()) {
+                // if we get passed the available palettes we're done
+                return;
+            }
+
+            int indexInPalette = colorIndex % colorsPerPalette;
+            System.out.println(String.format("Mouse event {%d}/{%d}", mouseX, mouseY));
+
+            selectColor(paletteIndex, indexInPalette);
         } else if (e.getButton() == MouseButton.SECONDARY) {
             // right click = edit color
 
