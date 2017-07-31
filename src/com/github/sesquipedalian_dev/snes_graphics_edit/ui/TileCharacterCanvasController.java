@@ -49,7 +49,7 @@ public class TileCharacterCanvasController {
 
         Timeline timeline = new Timeline();
         KeyFrame keyFrame = new KeyFrame(
-            javafx.util.Duration.millis(1000 / 20), // tick at 20 hz
+            javafx.util.Duration.millis(1000 / 60), // tick at 60 hz
             event -> draw(event)
         );
         timeline.getKeyFrames().setAll(keyFrame);
@@ -107,7 +107,13 @@ public class TileCharacterCanvasController {
         if(ed != null) {
             int bitDepth = ed.getBitDepth();
             int selectedPaletteIndex = paletteCanvasController.getSelectedPalette();
-            Palette palette = ed.getPalette(selectedPaletteIndex);
+            Palette palette= null;
+            try {
+                palette = ed.getPalette(selectedPaletteIndex);
+            } catch (Exception e) {
+                // use dummy palette if not available
+                palette = new Palette(bitDepth);
+            }
 
             int pixelSize = (int) canvas.getWidth() / pixelsPerRow();
             TileCHR currentTile = null;
@@ -126,13 +132,17 @@ public class TileCharacterCanvasController {
                         }
                     }
 
+                    Color tileColor;
                     if(currentTile != null) {
                         int paletteIndex = currentTile.getColorSelected(x % TileCHR.TILE_DIM, y % TileCHR.TILE_DIM);
-                        Color c = palette.getColor(paletteIndex);
-                        gc.setStroke(c);
-                        gc.setFill(c);
-                        gc.fillRect(rectX, rectY, pixelSize, pixelSize);
+                        tileColor = palette.getColor(paletteIndex);
+                    } else {
+                        tileColor = new Color(0, 0, 0, 0);
                     }
+                    gc.setStroke(tileColor);
+                    gc.setFill(tileColor);
+                    gc.fillRect(rectX, rectY, pixelSize, pixelSize);
+
 
                     // only show pixel grid for sufficiently zoomed modes
                     if(zoomSelection > 1) {

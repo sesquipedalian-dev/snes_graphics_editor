@@ -52,7 +52,7 @@ public class PaletteCanvasController {
 
         Timeline timeline = new Timeline();
         KeyFrame keyFrame = new KeyFrame(
-            javafx.util.Duration.millis(1000 / 20), // tick at 20 hz
+            javafx.util.Duration.millis(1000 / 60), // tick at 60 hz
             event -> drawPalette(event)
         );
         timeline.getKeyFrames().setAll(keyFrame);
