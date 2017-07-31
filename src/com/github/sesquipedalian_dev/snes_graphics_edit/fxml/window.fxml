@@ -7,6 +7,7 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -168,9 +169,9 @@
                <font>
                   <Font size="18.0" />
                </font></Text>
-            <Pane minHeight="80.0" minWidth="80.0" style="-fx-border-width: 5; -fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+            <Pane minHeight="80.0" minWidth="80.0" style="-fx-border-width: 2; -fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
                <children>
-                  <Canvas height="200.0" width="200.0" />
+                  <Canvas fx:id="tileChrCanvas" height="250.0" width="280.0" />
                </children>
             </Pane>
          </children>
@@ -243,5 +244,19 @@
             </Text>
          </children>
       </GridPane>
+      <AnchorPane prefHeight="80.0" prefWidth="292.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="30.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Palettes:" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <ScrollPane prefHeight="50.0" prefWidth="280.0" style="-fx-border-width: 2; -fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <content>
+                  <Canvas fx:id="paletteCanvas" height="272.0" width="272.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

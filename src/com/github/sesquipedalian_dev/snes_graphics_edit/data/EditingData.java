@@ -63,9 +63,9 @@ public class EditingData {
         String line;
         while((line = in.readLine()) != null) {
             Scanner s = new Scanner(line);
-            if(state == 0) { // haven't found starting data yet
+            if (state == 0) { // haven't found starting data yet
                 String found = s.findInLine("; bitDepth: (\\d+)");
-                if(found != null) {
+                if (found != null) {
                     MatchResult r = s.match();
                     String group = r.group(1);
                     int bitDepth = Integer.parseInt(group);
@@ -73,12 +73,12 @@ public class EditingData {
                     retVal = new EditingData(bitDepth);
                     state = 1;
                 }
-            } else if(state == 1) { // found bit depth
+            } else if (state == 1) { // found bit depth
                 String found = s.findInLine("(" + shortName + "Palettes:|" + shortName + "Tiles:)");
-                if(found != null) {
+                if (found != null) {
                     MatchResult r = s.match();
                     String group = r.group(1);
-                    if(group.equals(shortName + "Palettes:")) {
+                    if (group.equals(shortName + "Palettes:")) {
                         // start parsing palettes
                         state = 2;
                     } else if (group.equals(shortName + "Tiles:")) {
@@ -87,7 +87,7 @@ public class EditingData {
                     }
                 }
             } else if (state == 2) { // parsing palettes
-                if(line.matches("^\\s*\\.db ")) {
+                if (line.matches("^\\s*\\.db.*")) {
                     // if we find a data row, add it as a palette
                     Palette p = Palette.fromString(new Scanner(line), retVal.getBitDepth());
                     retVal.addPalette(p);
@@ -96,7 +96,7 @@ public class EditingData {
                     state = 1;
                 }
             } else if (state == 3) { // parsing tiles
-                if(line.matches("; tile row \\d+")) {
+                if (line.matches("; tile row \\d+")) {
                     // if we get a new row, add the new row
                     retVal.addTileRow();
                     nextTileY = 0;
@@ -113,6 +113,7 @@ public class EditingData {
         }
 
         retVal.filename = filename;
+        System.out.println(String.format("read in editing data: %d %d %d", retVal.getTileRows(), retVal.getBitDepth(), retVal.currentPalettes()));
         return retVal;
     }
 
@@ -162,7 +163,7 @@ public class EditingData {
     private ArrayList<Palette> palettes;
 
     public int maxPalettes() {
-        return MAX_PALETTE_MEM / bitDepth / 2;
+        return MAX_PALETTE_MEM / bitDepth / 4;
     }
 
     public void addPalette(Palette p) {

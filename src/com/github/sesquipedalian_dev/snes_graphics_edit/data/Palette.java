@@ -52,8 +52,8 @@ public class Palette {
         colors[index - 1] = color;
     }
 
-    public Color[] getColors() {
-        return colors;
+    public Color getColor(int index) {
+        return colors[index];
     }
 
     public void serializeToStream(PrintStream out) {

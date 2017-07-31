@@ -17,11 +17,15 @@ package com.github.sesquipedalian_dev.snes_graphics_edit.ui;
 
 import com.github.sesquipedalian_dev.snes_graphics_edit.data.EditingData;
 import com.github.sesquipedalian_dev.snes_graphics_edit.Main;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.SingleSelectionModel;
@@ -62,6 +66,9 @@ public class GUIController {
     @FXML
     public ChoiceBox bitDepthSel;
 
+    @FXML
+    public Canvas paletteCanvas;
+
     public void initialize() {
         System.out.println("Initializing GUIController");
         ObservableList<String> items = FXCollections.observableArrayList(
@@ -71,6 +78,9 @@ public class GUIController {
         SingleSelectionModel<String> sm = bitDepthSel.getSelectionModel();
         sm.select(0);
         sm.selectedIndexProperty().addListener(bitDepthListener);
+
+        // set up palette controller with a periodic callback
+        new PaletteCanvasController(paletteCanvas);
     }
 
     @FXML
