@@ -96,6 +96,7 @@ public class PaletteCanvasController {
         gc.setFill(Color.WHITE);
         gc.setStroke(Color.WHITE);
         gc.rect(0, 0, canvas.getWidth(), canvas.getHeight());
+        gc.setLineWidth(2);
 
         EditingData ed = EditingData.getInstance();
         if(ed != null) {
@@ -130,24 +131,29 @@ public class PaletteCanvasController {
                         gc.setStroke(Color.RED);
 
                         // if first color in palette draw left side
-                        if(indexInPalette == 0) {
+                        if ((indexInPalette % COLORS_PER_ROW) == 0) {
                             gc.strokeLine(rectX, rectY, rectX, rectY + CANVAS_SIZE_OF_COLOR);
                         }
 
-                        // draw top and bottom sides
-                        gc.strokeLine(rectX, rectY, rectX + CANVAS_SIZE_OF_COLOR, rectY);
-                        gc.strokeLine(rectX, rectY + CANVAS_SIZE_OF_COLOR, rectX + CANVAS_SIZE_OF_COLOR, rectY + CANVAS_SIZE_OF_COLOR);
+                        // draw top
+                        if (indexInPalette < COLORS_PER_ROW) {
+                            gc.strokeLine(rectX, rectY, rectX + CANVAS_SIZE_OF_COLOR, rectY);
+                        }
+
+                        // draw bottom
+                        if (indexInPalette > colorsPerPalette - COLORS_PER_ROW) {
+                            gc.strokeLine(rectX, rectY + CANVAS_SIZE_OF_COLOR - 1, rectX + CANVAS_SIZE_OF_COLOR, rectY + CANVAS_SIZE_OF_COLOR - 1);
+                        }
 
                         // if last color in palette draw right side
-                        if(indexInPalette == ((Math.pow(2, bitDepth)) - 1)) {
-                            gc.strokeLine(rectX + CANVAS_SIZE_OF_COLOR, rectY, rectX + CANVAS_SIZE_OF_COLOR, rectY + CANVAS_SIZE_OF_COLOR);
+                        if (indexInPalette % COLORS_PER_ROW == (Math.min(colorsPerPalette, COLORS_PER_ROW) - 1)) {
+                            gc.strokeLine(rectX + CANVAS_SIZE_OF_COLOR - 1, rectY, rectX + CANVAS_SIZE_OF_COLOR - 1, rectY + CANVAS_SIZE_OF_COLOR);
                         }
                     }
 
                     if(isSelectedColor) {
                         gc.setStroke(Color.WHITE);
-                        gc.setLineWidth(1);
-                        gc.strokeRect(rectX, rectY + 1, CANVAS_SIZE_OF_COLOR, CANVAS_SIZE_OF_COLOR - 2);
+                        gc.strokeRect(rectX, rectY + 2, CANVAS_SIZE_OF_COLOR, CANVAS_SIZE_OF_COLOR - 4);
 
                         // also take this opportunity to make sure the color picker is using the proper color
                         enableColorPickerOnChange = false;

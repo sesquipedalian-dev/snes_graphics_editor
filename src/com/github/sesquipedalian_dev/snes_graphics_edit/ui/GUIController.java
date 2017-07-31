@@ -17,6 +17,7 @@ package com.github.sesquipedalian_dev.snes_graphics_edit.ui;
 
 import com.github.sesquipedalian_dev.snes_graphics_edit.data.EditingData;
 import com.github.sesquipedalian_dev.snes_graphics_edit.Main;
+import com.github.sesquipedalian_dev.snes_graphics_edit.data.Palette;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -213,6 +214,11 @@ public class GUIController {
         }
 
         // make new data to edit
-        new EditingData(bitDepth);
+        EditingData ed = new EditingData(bitDepth);
+
+        // initialize the palettes to blank
+        for(int i = 0; i < ed.maxPalettes(); ++i) {
+            ed.addPalette(new Palette(bitDepth));
+        }
     }
 }

@@ -93,5 +93,11 @@ public class Main extends Application {
 
         EditingData ed2 = EditingData.fromFile("HornyGoat.inc");
         System.out.println(String.format("read in editing data: %d %d %d", ed2.getTileRows(), ed.getBitDepth(), ed.currentPalettes()));
+        for(int i = 0; i < ed.currentPalettes(); ++i) {
+            Palette p4 = ed.getPalette(i);
+            for(int c = 0; c < p4.colorsSize(); ++c) {
+                System.out.println(String.format("Palette %d Color %d = %s", i, c, p4.getColor(c)));
+            }
+        }
     }
 }

@@ -30,14 +30,16 @@ import java.util.regex.MatchResult;
 public class Palette {
     protected int bitDepth;
     protected Color colors[];
-    protected int colorsSize;
+
+    public int colorsSize() {
+        return (int) Math.pow(2, bitDepth);
+    }
 
     public Palette(int bitDepth) {
         this.bitDepth = bitDepth;
 
-        colorsSize = (int) Math.pow(2, bitDepth);
-        this.colors = new Color[colorsSize];
-        for(int i = 0; i < colorsSize; ++i) {
+        this.colors = new Color[colorsSize()];
+        for(int i = 0; i < colorsSize(); ++i) {
             // start all colors black
             this.colors[i] = new Color(0, 0, 0, 1);
         }
@@ -45,8 +47,8 @@ public class Palette {
 
     // 0-indexed color selection
     public void selectColor(int index, Color color) {
-        if(index < 0 || index >= colorsSize) {
-            throw new IndexOutOfBoundsException("Palette index should be 0 < INDEX < (2 ^ bit depth) ({" + colorsSize + "})");
+        if(index < 0 || index >= colorsSize()) {
+            throw new IndexOutOfBoundsException("Palette index should be 0 < INDEX < (2 ^ bit depth) ({" + colorsSize() + "})");
         }
 
         colors[index] = color;
@@ -57,7 +59,7 @@ public class Palette {
     }
 
     public void serializeToStream(PrintStream out) {
-        for(int i = 0; i < colorsSize; ++i) {
+        for(int i = 0; i < colorsSize(); ++i) {
             // at beginning of line tell the assembler we got the datas
             if(i % 16 == 0) {
                 out.print(".db ");
@@ -78,7 +80,7 @@ public class Palette {
             out.print(String.format("$%02X", (color16bit & 0xFF00) >> 8));
 
             // unless last color or end of a block of 16, newline
-            if((i % 16 == 15) || (i == colorsSize - 1)) {
+            if((i % 16 == 15) || (i == colorsSize() - 1)) {
                 out.print("\n");
             } else {
                 out.print(", ");
@@ -93,7 +95,7 @@ public class Palette {
         // basically $<hex value>, repeated a bunch of times
         StringBuilder regex = new StringBuilder();
         regex.append("^\\s*\\.db\\s*");
-        for(int i = 0; i < (retVal.colorsSize * 2) - 1; ++i) {
+        for(int i = 0; i < (retVal.colorsSize() * 2) - 1; ++i) {
             regex.append("\\$([A-Fa-f0-9]{2}),\\s*");
         }
         regex.append("\\$([A-Fa-f0-9]{2})\\s*$");
@@ -105,9 +107,10 @@ public class Palette {
                 // parse colors data lsb first, then msb
                 int lsb = Integer.parseInt(r.group(i), 16);
                 int msb = Integer.parseInt(r.group(i + 1), 16);
+                System.out.println(String.format("Parsing palette lsb = %s = %02x and msb = %s = %02x", r.group(i), lsb, r.group(i+1), msb));
 
-                Color newColor = Util.snesToJavaColor((msb << 8) & lsb);
-                retVal.selectColor(((i + 1) / 2 - 1), newColor);
+                Color newColor = Util.snesToJavaColor(msb, lsb);
+                retVal.selectColor(((i + 1) / 2) - 1, newColor);
             } catch(NumberFormatException e) {
                 System.out.println("problem parsing a byte {" + e + "}");
             }

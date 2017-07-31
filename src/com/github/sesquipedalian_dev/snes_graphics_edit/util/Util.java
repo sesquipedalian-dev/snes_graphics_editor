@@ -16,10 +16,7 @@ public class Util {
     }
 
     // convert from SNES BGR 5-bit representations to java % RGB
-    public static Color snesToJavaColor(int snes) {
-        int lsb = snes & 0xFF;
-        int msb = (snes & 0xFF00) >> 8;
-
+    public static Color snesToJavaColor(int msb, int lsb) {
         // extract the 5-bit color values from the bytes
         int b5bit = (msb & 0x7C) >> 2;
         int g5bit = ((msb & 0x3 ) << 3) | ((lsb & 0xE0) >> 5);

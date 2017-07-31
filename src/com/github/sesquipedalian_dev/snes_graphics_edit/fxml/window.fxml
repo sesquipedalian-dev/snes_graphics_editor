@@ -42,7 +42,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#menuSaveAs" text="Save As" />
                   <MenuItem mnemonicParsing="false" onAction="#menuExit" text="Close">
                      <accelerator>
-                        <KeyCodeCombination alt="DOWN" code="F4" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                        <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
             </items>
@@ -245,14 +245,14 @@
             </Text>
          </children>
       </GridPane>
-      <AnchorPane prefHeight="80.0" prefWidth="292.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="30.0">
+      <AnchorPane prefHeight="80.0" prefWidth="295.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="30.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Palettes:" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <ScrollPane prefHeight="50.0" prefWidth="292.0" style="-fx-border-width: 2; -fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="272.0" style="-fx-border-width: 2; -fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <content>
                   <Canvas fx:id="paletteCanvas" height="272.0" width="272.0" />
                </content>
