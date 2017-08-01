@@ -44,8 +44,8 @@ public class Main extends Application {
     public static void runTests() throws Exception {
         TileCHR tile = new TileCHR(2);
         for(int x = 0; x < TileCHR.TILE_DIM; ++x) {
-            tile.selectColor(x, 0, 4);
-            tile.selectColor(x, 1, 4);
+            tile.selectColor(x, 0, 3);
+            tile.selectColor(x, 1, 3);
         }
 
         tile.serializeToStream(System.out);

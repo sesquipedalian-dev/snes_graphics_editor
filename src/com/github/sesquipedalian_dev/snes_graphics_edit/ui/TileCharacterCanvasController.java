@@ -67,15 +67,13 @@ public class TileCharacterCanvasController {
 
         switch(zoomSel.getSelectionModel().getSelectedIndex()) {
             case 1:
-                return defaultPixPerRow / 2;
-            case 2:
                 return defaultPixPerRow / 4;
-            case 3:
+            case 2:
                 return defaultPixPerRow / 8;
-            case 4:
+            case 3:
                 return defaultPixPerRow / 16;
             default:
-                return defaultPixPerRow;
+                return defaultPixPerRow / 2;
         }
     }
 
@@ -85,11 +83,18 @@ public class TileCharacterCanvasController {
             int mouseX = (int) e.getX();
             int mouseY = (int) e.getY();
 
-            int x = mouseY / pixelsPerRow();
-            int y = mouseX / pixelsPerRow();
+            int pixelX = mouseY / (((int) canvas.getHeight()) / pixelsPerRow());
+            int pixelY = mouseX / (((int) canvas.getWidth()) / pixelsPerRow());
 
             EditingData ed = EditingData.getInstance();
+            int tileX = pixelX / TileCHR.TILE_DIM;
+            int tileY = pixelY / TileCHR.TILE_DIM;
 
+            try {
+                TileCHR currentTile = ed.getTile(tileX, tileY);
+                currentTile.selectColor(pixelX % TileCHR.TILE_DIM, pixelY % TileCHR.TILE_DIM, paletteCanvasController.getSelectedColor());
+            } catch(Exception ex) {
+            }
         }
     }
 
@@ -123,18 +128,26 @@ public class TileCharacterCanvasController {
                     int rectX = y * pixelSize;
                     int rectY = x * pixelSize;
 
+                    if(rectX > canvas.getWidth() || rectY > canvas.getHeight()) {
+                        // skip stuff that's 'off screen'
+                        break;
+                    }
+
                     // when we get into the next tile load it up
                     if(y % TileCHR.TILE_DIM == 0) {
                         try {
                             currentTile = ed.getTile(selectedTileRow + (x / TileCHR.TILE_DIM), selectedTileCol + (y / TileCHR.TILE_DIM));
                         } catch(Exception e) {
                             // ignore tiles we can't find
+                            currentTile = null;
                         }
                     }
 
                     Color tileColor;
                     if(currentTile != null) {
-                        int paletteIndex = currentTile.getColorSelected(x % TileCHR.TILE_DIM, y % TileCHR.TILE_DIM);
+                        int indexInTileX = x % TileCHR.TILE_DIM;
+                        int indexInTileY = y % TileCHR.TILE_DIM;
+                        int paletteIndex = currentTile.getColorSelected(indexInTileX, indexInTileY);
                         tileColor = palette.getColor(paletteIndex);
                     } else {
                         tileColor = new Color(0, 0, 0, 1);

@@ -46,6 +46,10 @@ public class PaletteCanvasController {
         return selectedPalette;
     }
 
+    public int getSelectedColor() {
+        return selectedColor;
+    }
+
     public PaletteCanvasController(Canvas canvas, ColorPicker colorPicker) {
         this.canvas = canvas;
         this.colorPicker = colorPicker;

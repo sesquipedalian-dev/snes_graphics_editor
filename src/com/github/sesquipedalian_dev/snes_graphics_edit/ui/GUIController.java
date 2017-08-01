@@ -89,11 +89,11 @@ public class GUIController {
         bitDepthSm.select(1);
 
         ObservableList<String> tileZoomItems = FXCollections.observableArrayList(
-            "1x", "2x", "4x", "8x", "16x"
+            "2x", "4x", "8x", "16x"
         );
         zoomSel.setItems(tileZoomItems);
         SingleSelectionModel<String> tileZoomSm = zoomSel.getSelectionModel();
-        tileZoomSm.select(4);
+        tileZoomSm.select(3);
 
         // set up other GUI controllers
         PaletteCanvasController pcc = new PaletteCanvasController(paletteCanvas, colorPicker);
