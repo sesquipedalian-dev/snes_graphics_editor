@@ -120,13 +120,13 @@ public class TileCharacterCanvasController {
 
             for(int x = 0; x < pixelsPerRow(); ++x) {
                 for (int y = 0; y < pixelsPerRow(); ++y) {
-                    int rectX = x * pixelSize;
-                    int rectY = y * pixelSize;
+                    int rectX = y * pixelSize;
+                    int rectY = x * pixelSize;
 
                     // when we get into the next tile load it up
                     if(y % TileCHR.TILE_DIM == 0) {
                         try {
-                            currentTile = ed.getTile(selectedTileRow + (x % TileCHR.TILE_DIM), selectedTileCol + (y % TileCHR.TILE_DIM));
+                            currentTile = ed.getTile(selectedTileRow + (x / TileCHR.TILE_DIM), selectedTileCol + (y / TileCHR.TILE_DIM));
                         } catch(Exception e) {
                             // ignore tiles we can't find
                         }
@@ -137,7 +137,7 @@ public class TileCharacterCanvasController {
                         int paletteIndex = currentTile.getColorSelected(x % TileCHR.TILE_DIM, y % TileCHR.TILE_DIM);
                         tileColor = palette.getColor(paletteIndex);
                     } else {
-                        tileColor = new Color(0, 0, 0, 0);
+                        tileColor = new Color(0, 0, 0, 1);
                     }
                     gc.setStroke(tileColor);
                     gc.setFill(tileColor);
