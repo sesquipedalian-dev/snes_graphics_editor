@@ -93,7 +93,6 @@ public class TileCharacterCanvasController {
     private boolean mouseDragHandled = false;
     private void handleMouseDragged(MouseEvent e) {
         if(mouseDragEnabled) {
-            System.out.println(String.format("Mouse dragged event %s", e.toString()));
             mouseDragHandled = true;
 
             // switch any pixels the mouse is dragged through to the selected color

@@ -9,6 +9,7 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
 
 /**
@@ -17,14 +18,23 @@ import javafx.scene.paint.Color;
 public class TileMemCanvasController {
     private Canvas canvas;
     private PaletteCanvasController paletteCanvasController;
+    private Button minusBtn;
+    private Button plusBtn;
 
     // TODO manipulate these with the BRICK... MOUSE...
     private int selectedTileRow = 0;
     private int selectedTileCol = 0;
 
-    public TileMemCanvasController(Canvas canvas, PaletteCanvasController paletteCanvasController) {
+    public TileMemCanvasController(
+        Canvas canvas,
+        PaletteCanvasController paletteCanvasController,
+        Button minusBtn,
+        Button plusBtn
+    ) {
         this.canvas = canvas;
         this.paletteCanvasController = paletteCanvasController;
+        this.minusBtn = minusBtn;
+        this.plusBtn = plusBtn;
 
         // set up loop to call draw periodically
         Timeline timeline = new Timeline();
@@ -35,11 +45,27 @@ public class TileMemCanvasController {
         timeline.getKeyFrames().setAll(keyFrame);
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
+
+        minusBtn.setOnAction(event -> handleMinusBtn(event));
+        plusBtn.setOnAction(event -> handlePlusBtn(event));
     }
 
+    private void handleMinusBtn(ActionEvent e) {
+        EditingData ed = EditingData.getInstance();
+        if(ed != null) {
+            ed.subtractTileRow();
+        }
+    }
+
+    private void handlePlusBtn(ActionEvent e) {
+        EditingData ed = EditingData.getInstance();
+        if(ed != null) {
+            ed.addTileRow();
+        }
+    }
 
     private int pixelsPerRow() {
-        return 256; // we always show tile mem 16x16
+        return 128; // we always show tile mem 16x8
     }
 
     private void draw(ActionEvent event) {

@@ -110,7 +110,6 @@ public class PaletteCanvasController {
             }
 
             int indexInPalette = colorIndex % colorsPerPalette;
-            System.out.println(String.format("Mouse event {%d}/{%d}", mouseX, mouseY));
 
             selectColor(paletteIndex, indexInPalette);
         }

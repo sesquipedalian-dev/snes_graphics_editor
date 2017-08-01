@@ -27,10 +27,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ColorPicker;
-import javafx.scene.control.SingleSelectionModel;
+import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 
 import java.io.File;
@@ -78,6 +75,10 @@ public class GUIController {
     public Canvas tileChrCanvas;
     @FXML
     public Canvas tileMemCanvas;
+    @FXML
+    public Button tileMemMinusBtn;
+    @FXML
+    public Button tileMemPlusBtn;
 
     public void initialize() {
         System.out.println("Initializing GUIController");
@@ -100,7 +101,7 @@ public class GUIController {
         // set up other GUI controllers
         PaletteCanvasController pcc = new PaletteCanvasController(paletteCanvas, colorPicker);
         new TileCharacterCanvasController(zoomSel, tileChrCanvas, pcc);
-        new TileMemCanvasController(tileMemCanvas, pcc);
+        new TileMemCanvasController(tileMemCanvas, pcc, tileMemMinusBtn, tileMemPlusBtn);
     }
 
     @FXML
