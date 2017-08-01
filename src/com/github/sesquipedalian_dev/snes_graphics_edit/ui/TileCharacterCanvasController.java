@@ -57,8 +57,18 @@ public class TileCharacterCanvasController {
         timeline.play();
 
         canvas.addEventHandler(
-            MouseEvent.MOUSE_CLICKED,
-            event -> handleMouse(event)
+            MouseEvent.MOUSE_PRESSED,
+            event -> handleMousePressed(event)
+        );
+
+        canvas.addEventHandler(
+            MouseEvent.MOUSE_DRAGGED,
+            event -> handleMouseDragged(event)
+        );
+
+        canvas.addEventHandler(
+                MouseEvent.MOUSE_RELEASED,
+                event -> handleMouseReleased(event)
         );
     }
 
@@ -77,9 +87,16 @@ public class TileCharacterCanvasController {
         }
     }
 
-    private void handleMouse(MouseEvent e) {
-        if(e.getButton() == MouseButton.PRIMARY) {
-            // left click = select different palette / color
+    private boolean mouseDragEnabled = false;
+    private int storedPixelX = -1;
+    private int storedPixelY = -1;
+    private boolean mouseDragHandled = false;
+    private void handleMouseDragged(MouseEvent e) {
+        if(mouseDragEnabled) {
+            System.out.println(String.format("Mouse dragged event %s", e.toString()));
+            mouseDragHandled = true;
+
+            // switch any pixels the mouse is dragged through to the selected color
             int mouseX = (int) e.getX();
             int mouseY = (int) e.getY();
 
@@ -96,6 +113,36 @@ public class TileCharacterCanvasController {
             } catch(Exception ex) {
             }
         }
+    }
+
+    private void handleMouseReleased(MouseEvent e) {
+        mouseDragEnabled = false;
+        if(!mouseDragHandled) {
+            EditingData ed = EditingData.getInstance();
+            int tileX = storedPixelX / TileCHR.TILE_DIM;
+            int tileY = storedPixelY / TileCHR.TILE_DIM;
+
+            try {
+                TileCHR currentTile = ed.getTile(tileX, tileY);
+                currentTile.selectColor(
+                    storedPixelX % TileCHR.TILE_DIM,
+                    storedPixelY % TileCHR.TILE_DIM,
+                    paletteCanvasController.getSelectedColor()
+                );
+            } catch(Exception ex) {
+            }
+        }
+    }
+
+    private void handleMousePressed(MouseEvent e) {
+        mouseDragEnabled = true;
+        mouseDragHandled = false;
+
+        int mouseX = (int) e.getX();
+        int mouseY = (int) e.getY();
+
+        storedPixelX = mouseY / (((int) canvas.getHeight()) / pixelsPerRow());
+        storedPixelY = mouseX / (((int) canvas.getWidth()) / pixelsPerRow());
     }
 
     private void draw(ActionEvent event) {

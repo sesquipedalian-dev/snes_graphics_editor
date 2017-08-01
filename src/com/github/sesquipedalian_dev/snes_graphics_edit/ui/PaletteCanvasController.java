@@ -167,7 +167,7 @@ public class PaletteCanvasController {
                         }
 
                         // draw bottom
-                        if (indexInPalette > colorsPerPalette - COLORS_PER_ROW) {
+                        if (indexInPalette >= colorsPerPalette - COLORS_PER_ROW) {
                             gc.strokeLine(rectX, rectY + CANVAS_SIZE_OF_COLOR - 1, rectX + CANVAS_SIZE_OF_COLOR, rectY + CANVAS_SIZE_OF_COLOR - 1);
                         }
 
