@@ -188,6 +188,11 @@ public class EditingData {
     // SNES stores this many 8x8 tiles in a 'row' in VRAM.  relevant to wrapping bigger tiles than 8x8
     // e.g. the tiles involved in a 16x16 sprite starting at <tile> are: tile, tile+1, tile+16, tile+17.
     public final int TILES_PER_ROW = 16;
+
+    // max rows in CHR data??? unsure if SNES sets a limit, but the game can adress a max of
+    // 64x64 tiles in the tile map data, and the max 'tile' point is a 10-bit int
+    public final int MAX_TILE_ROWS = 16;
+
     private Stack<ArrayList<TileCHR>> tiles;
 
     public int getTileRows() {
@@ -195,6 +200,10 @@ public class EditingData {
     }
 
     public void addTileRow() {
+        if(tiles.size() + 1 > MAX_TILE_ROWS ) {
+            return;
+        }
+
         ArrayList<TileCHR> newRow = new ArrayList<TileCHR>(TILES_PER_ROW);
         for(int i = 0; i < TILES_PER_ROW; ++i) {
             TileCHR newTile = new TileCHR(bitDepth);

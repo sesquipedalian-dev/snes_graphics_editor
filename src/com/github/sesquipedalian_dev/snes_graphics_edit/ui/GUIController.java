@@ -76,6 +76,8 @@ public class GUIController {
     public ChoiceBox zoomSel;
     @FXML
     public Canvas tileChrCanvas;
+    @FXML
+    public Canvas tileMemCanvas;
 
     public void initialize() {
         System.out.println("Initializing GUIController");
@@ -98,6 +100,7 @@ public class GUIController {
         // set up other GUI controllers
         PaletteCanvasController pcc = new PaletteCanvasController(paletteCanvas, colorPicker);
         new TileCharacterCanvasController(zoomSel, tileChrCanvas, pcc);
+        new TileMemCanvasController(tileMemCanvas, pcc);
     }
 
     @FXML

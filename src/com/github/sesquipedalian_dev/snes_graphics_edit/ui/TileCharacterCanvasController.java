@@ -197,7 +197,7 @@ public class TileCharacterCanvasController {
                         int paletteIndex = currentTile.getColorSelected(indexInTileX, indexInTileY);
                         tileColor = palette.getColor(paletteIndex);
                     } else {
-                        tileColor = new Color(0, 0, 0, 1);
+                        tileColor = palette.getColor(0);
                     }
                     gc.setStroke(tileColor);
                     gc.setFill(tileColor);
