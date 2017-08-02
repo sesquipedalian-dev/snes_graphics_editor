@@ -102,8 +102,8 @@ public class TileCharacterCanvasController {
             int pixelY = mouseX / (((int) canvas.getWidth()) / pixelsPerRow());
 
             EditingData ed = EditingData.getInstance();
-            int tileX = pixelX / TileCHR.TILE_DIM;
-            int tileY = pixelY / TileCHR.TILE_DIM;
+            int tileX = tileMemCanvasController.getSelectedTileRow() + (pixelX / TileCHR.TILE_DIM);
+            int tileY = tileMemCanvasController.getSelectedTileCol() + (pixelY / TileCHR.TILE_DIM);
 
             System.out.println(String.format("Mouse dragged event %s; mouseCoord: %d/%d, pixelCoord %d/%d, tileCoord: %d %d",
                     e.toString(), mouseX, mouseY, pixelX, pixelY, tileX, tileY
@@ -121,8 +121,8 @@ public class TileCharacterCanvasController {
         mouseDragEnabled = false;
         if(!mouseDragHandled) {
             EditingData ed = EditingData.getInstance();
-            int tileX = storedPixelX / TileCHR.TILE_DIM;
-            int tileY = storedPixelY / TileCHR.TILE_DIM;
+            int tileX = tileMemCanvasController.getSelectedTileRow() + (storedPixelX / TileCHR.TILE_DIM);
+            int tileY = tileMemCanvasController.getSelectedTileCol() + (storedPixelY / TileCHR.TILE_DIM);
 
             try {
                 TileCHR currentTile = ed.getTile(tileX, tileY);

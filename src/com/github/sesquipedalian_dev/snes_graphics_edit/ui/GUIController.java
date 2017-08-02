@@ -100,7 +100,7 @@ public class GUIController {
 
         // set up other GUI controllers
         PaletteCanvasController pcc = new PaletteCanvasController(paletteCanvas, colorPicker);
-        TileMemCanvasController tmcc = new TileMemCanvasController(tileMemCanvas, pcc, tileMemMinusBtn, tileMemPlusBtn);
+        TileMemCanvasController tmcc = new TileMemCanvasController(tileMemCanvas, pcc, tileMemMinusBtn, tileMemPlusBtn, zoomSel);
         new TileCharacterCanvasController(zoomSel, tileChrCanvas, pcc, tmcc);
     }
 

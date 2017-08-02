@@ -25,6 +25,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 
@@ -37,6 +38,7 @@ public class TileMemCanvasController {
     private PaletteCanvasController paletteCanvasController;
     private Button minusBtn;
     private Button plusBtn;
+    private ChoiceBox zoomSel;
 
     private int selectedTileRow = 0;
     private int selectedTileCol = 0;
@@ -53,12 +55,14 @@ public class TileMemCanvasController {
         Canvas canvas,
         PaletteCanvasController paletteCanvasController,
         Button minusBtn,
-        Button plusBtn
+        Button plusBtn,
+        ChoiceBox zoomSel
     ) {
         this.canvas = canvas;
         this.paletteCanvasController = paletteCanvasController;
         this.minusBtn = minusBtn;
         this.plusBtn = plusBtn;
+        this.zoomSel = zoomSel;
 
         // set up loop to call draw periodically
         Timeline timeline = new Timeline();
@@ -81,8 +85,8 @@ public class TileMemCanvasController {
         double mouseY = e.getY();
 
         double tileSizeInPx = canvas.getWidth() / EditingData.TILES_PER_ROW;
-        int tileX = (int) (mouseX / tileSizeInPx);
-        int tileY = (int) (mouseY / tileSizeInPx);
+        int tileX = (int) (mouseY / tileSizeInPx);
+        int tileY = (int) (mouseX / tileSizeInPx);
 
         selectedTileRow = tileX;
         selectedTileCol = tileY;
@@ -187,21 +191,22 @@ public class TileMemCanvasController {
             double selectionXStart = selectedTileRow * TileCHR.TILE_DIM * pixelSize;
             double selectionYStart = selectedTileCol * TileCHR.TILE_DIM * pixelSize;
             int selectionSize = 0;
-            switch(bitDepth) {
+            int zoomSelection = zoomSel.getSelectionModel().getSelectedIndex();
+            switch(zoomSelection) {
                 case 1:
-                    selectionSize = 1;
+                    selectionSize = 4;
                     break;
                 case 2:
                     selectionSize = 2;
                     break;
                 case 3:
-                    selectionSize = 4;
+                    selectionSize = 1;
                     break;
                 default:
                     selectionSize = 8;
                     break;
             }
-            gc.strokeRect(selectionXStart, selectionYStart, selectionSize * TileCHR.TILE_DIM * pixelSize, selectionSize * TileCHR.TILE_DIM * pixelSize);
+            gc.strokeRect(selectionYStart, selectionXStart, selectionSize * TileCHR.TILE_DIM * pixelSize, selectionSize * TileCHR.TILE_DIM * pixelSize);
         }
     }
 }
