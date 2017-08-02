@@ -273,7 +273,11 @@
                   <Font size="18.0" />
                </font>
             </Text>
-            <Canvas fx:id="tileMemCanvas" height="260.0" style="-fx-border-width: 2; -fx-border-color: black;" width="260.0" AnchorPane.topAnchor="30.0" />
+            <ScrollPane prefHeight="260.0" prefWidth="260.0" AnchorPane.topAnchor="30.0">
+               <content>
+                  <Canvas fx:id="tileMemCanvas" height="260.0" width="245.0" />
+               </content>
+            </ScrollPane>
          </children>
       </AnchorPane>
       <FlowPane layoutX="605.0" layoutY="70.0" minWidth="-Infinity" orientation="VERTICAL" prefWidth="30.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="80.0">

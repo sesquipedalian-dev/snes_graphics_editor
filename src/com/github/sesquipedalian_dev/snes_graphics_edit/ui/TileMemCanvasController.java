@@ -1,3 +1,18 @@
+/**
+ * Copyright 2017 sesquipedalian.dev@gmail.com
+ * <p>
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.github.sesquipedalian_dev.snes_graphics_edit.ui;
 
 import com.github.sesquipedalian_dev.snes_graphics_edit.data.EditingData;
@@ -13,8 +28,9 @@ import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
 
 /**
- * Created by Scott on 8/1/2017.
- */
+ * UI controller for the UI that displays the tile mem we're manipulating.  This gives a view of the entire
+ * tile character data that we're editing.
+  */
 public class TileMemCanvasController {
     private Canvas canvas;
     private PaletteCanvasController paletteCanvasController;
@@ -48,6 +64,8 @@ public class TileMemCanvasController {
 
         minusBtn.setOnAction(event -> handleMinusBtn(event));
         plusBtn.setOnAction(event -> handlePlusBtn(event));
+
+        // TODO add mouse events
     }
 
     private void handleMinusBtn(ActionEvent e) {
@@ -94,6 +112,7 @@ public class TileMemCanvasController {
             TileCHR currentTile = null;
 
             int maxPixelsX = ed.getTileRows() * TileCHR.TILE_DIM;
+            // draw pixels
             for(int x = 0; x < maxPixelsX; ++x) {
                 for (int y = 0; y < pixelsPerRow(); ++y) {
                     double rectX = y * pixelSize;
@@ -127,13 +146,42 @@ public class TileMemCanvasController {
                     gc.setFill(tileColor);
                     gc.fillRect(rectX, rectY, pixelSize, pixelSize);
 
-                    // only show pixel grid for sufficiently zoomed modes
-//                    if(zoomSelection > 1) {
-//                        gc.setStroke(Color.BROWN);
-//                        gc.strokeRect(rectX, rectY, pixelSize, pixelSize);
-//                    }
                 }
             }
+
+            // draw tile grid
+            gc.setStroke(Color.BROWN);
+            for(int x = 0; x < EditingData.TILES_PER_ROW; ++x) {
+                for(int y = 0; y < ed.getTileRows(); ++y) {
+                    double rectX = x * TileCHR.TILE_DIM * pixelSize;
+                    double rectY = y * TileCHR.TILE_DIM * pixelSize;
+
+                    gc.strokeRect(rectX, rectY, TileCHR.TILE_DIM * pixelSize, TileCHR.TILE_DIM * pixelSize);
+                }
+            }
+
+            // draw selection window
+            gc.setLineWidth(3);
+            gc.setStroke(Color.WHITE);
+
+            double selectionXStart = selectedTileRow * TileCHR.TILE_DIM * pixelSize;
+            double selectionYStart = selectedTileCol * TileCHR.TILE_DIM * pixelSize;
+            int selectionSize = 0;
+            switch(bitDepth) {
+                case 1:
+                    selectionSize = 1;
+                    break;
+                case 2:
+                    selectionSize = 2;
+                    break;
+                case 3:
+                    selectionSize = 4;
+                    break;
+                default:
+                    selectionSize = 8;
+                    break;
+            }
+            gc.strokeRect(selectionXStart, selectionYStart, selectionSize * TileCHR.TILE_DIM * pixelSize, selectionSize * TileCHR.TILE_DIM * pixelSize);
         }
     }
 }

@@ -84,13 +84,23 @@
       <file leaf-file-name="TileMemCanvasController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/TileMemCanvasController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="91" column="55" lean-forward="false" selection-start-line="91" selection-start-column="55" selection-end-line="91" selection-end-column="55" />
+            <state relative-caret-position="542">
+              <caret line="174" column="38" lean-forward="true" selection-start-line="174" selection-start-column="38" selection-end-line="174" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2137#2138#0" expanded="true" />
-                <element signature="e#2195#2196#0" expanded="true" />
+                <element signature="e#2911#2912#0" expanded="true" />
+                <element signature="e#2969#2970#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GraphicsContext.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/javafx-src.zip!/javafx/scene/canvas/GraphicsContext.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="2380" column="16" lean-forward="false" selection-start-line="2380" selection-start-column="16" selection-end-line="2380" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -108,8 +118,8 @@
       <file leaf-file-name="PaletteCanvasController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/PaletteCanvasController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="112" column="0" lean-forward="true" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="14" column="3" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -133,7 +143,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/data/TileCHR.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
-              <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+              <caret line="74" column="38" lean-forward="false" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -142,8 +152,8 @@
       <file leaf-file-name="EditingData.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/data/EditingData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="133" column="37" lean-forward="true" selection-start-line="133" selection-start-column="37" selection-end-line="133" selection-end-column="37" />
+            <state relative-caret-position="256">
+              <caret line="189" column="41" lean-forward="false" selection-start-line="189" selection-start-column="28" selection-end-line="189" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -172,7 +182,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Controller</find>
       <find>red</find>
       <find>add</find>
       <find>Scott</find>
@@ -198,10 +207,11 @@
       <find>zoomSelection</find>
       <find>max</find>
       <find>pop</find>
-      <find>Mouse event</find>
-      <find>MAX</find>
       <find>canvas.get</find>
       <find>System</find>
+      <find>Mouse event</find>
+      <find>MAX</find>
+      <find>TILES_PER</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -233,12 +243,12 @@
         <option value="$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/data/Palette.java" />
         <option value="$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/data/Tile.java" />
         <option value="$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/data/EditingData.java" />
         <option value="$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/PaletteCanvasController.java" />
         <option value="$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/GUIController.java" />
         <option value="$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/TileCharacterCanvasController.java" />
-        <option value="$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/TileMemCanvasController.java" />
         <option value="$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/data/TileCHR.java" />
+        <option value="$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/data/EditingData.java" />
+        <option value="$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/TileMemCanvasController.java" />
       </list>
     </option>
   </component>
@@ -803,13 +813,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/TileMemCanvasController.java</url>
-          <line>97</line>
+          <line>116</line>
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/TileMemCanvasController.java</url>
-          <line>101</line>
+          <line>120</line>
           <properties />
           <option name="timeStamp" value="19" />
         </line-breakpoint>
@@ -982,7 +992,6 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/javafx-src.zip!/javafx/scene/input/MouseEvent.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/javafx-src.zip!/javafx/scene/control/SingleSelectionModel.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/javafx-src.zip!/javafx/scene/canvas/GraphicsContext.java" />
     <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/data/Palette.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1019,16 +1028,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/PaletteCanvasController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="112" column="0" lean-forward="true" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/TileCharacterCanvasController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
@@ -1039,30 +1038,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/data/EditingData.java">
+    <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/PaletteCanvasController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="133" column="37" lean-forward="true" selection-start-line="133" selection-start-column="37" selection-end-line="133" selection-end-column="37" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="14" column="3" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/data/TileCHR.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
-          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <caret line="74" column="38" lean-forward="false" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/data/EditingData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="189" column="41" lean-forward="false" selection-start-line="189" selection-start-column="28" selection-end-line="189" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/javafx-src.zip!/javafx/scene/canvas/GraphicsContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="2380" column="16" lean-forward="false" selection-start-line="2380" selection-start-column="16" selection-end-line="2380" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/TileMemCanvasController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="91" column="55" lean-forward="false" selection-start-line="91" selection-start-column="55" selection-end-line="91" selection-end-column="55" />
+        <state relative-caret-position="542">
+          <caret line="174" column="38" lean-forward="true" selection-start-line="174" selection-start-column="38" selection-end-line="174" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2137#2138#0" expanded="true" />
-            <element signature="e#2195#2196#0" expanded="true" />
+            <element signature="e#2911#2912#0" expanded="true" />
+            <element signature="e#2969#2970#0" expanded="true" />
           </folding>
         </state>
       </provider>
