@@ -89,14 +89,15 @@ public class TileMemCanvasController {
             gc.setStroke(bgColor);
             gc.fillRect(0, 0, canvas.getHeight(), canvas.getWidth());
 
-            int pixelSize = (int) canvas.getWidth() / pixelsPerRow();
+            double pixelSize = canvas.getWidth() / pixelsPerRow();
+
             TileCHR currentTile = null;
 
             int maxPixelsX = ed.getTileRows() * TileCHR.TILE_DIM;
             for(int x = 0; x < maxPixelsX; ++x) {
                 for (int y = 0; y < pixelsPerRow(); ++y) {
-                    int rectX = y * pixelSize;
-                    int rectY = x * pixelSize;
+                    double rectX = y * pixelSize;
+                    double rectY = x * pixelSize;
 
                     if(rectX > canvas.getWidth() || rectY > canvas.getHeight()) {
                         // skip stuff that's 'off screen'

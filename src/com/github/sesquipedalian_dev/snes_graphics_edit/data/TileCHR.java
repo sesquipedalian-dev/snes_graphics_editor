@@ -65,7 +65,6 @@ public class TileCHR {
                 byte accum = 0;
                 for (int y = 0; y < TILE_DIM; ++y) {
                     int shiftBack = TILE_DIM - y - 1 - plane;
-                    System.out.println(String.format("serialize TileCHR to stream; shift for coords y %d plane %d: %d", y, plane, shiftBack));
                     if(shiftBack < 0) {
                         accum |= (colorSelected[x][y] & (1 << plane)) >> -shiftBack;
                     } else {
