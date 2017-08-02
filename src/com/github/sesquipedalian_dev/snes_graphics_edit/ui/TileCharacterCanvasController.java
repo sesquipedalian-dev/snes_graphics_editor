@@ -106,6 +106,10 @@ public class TileCharacterCanvasController {
             int tileX = pixelX / TileCHR.TILE_DIM;
             int tileY = pixelY / TileCHR.TILE_DIM;
 
+            System.out.println(String.format("Mouse dragged event %s; mouseCoord: %d/%d, pixelCoord %d/%d, tileCoord: %d %d",
+                    e.toString(), mouseX, mouseY, pixelX, pixelY, tileX, tileY
+            ));
+
             try {
                 TileCHR currentTile = ed.getTile(tileX, tileY);
                 currentTile.selectColor(pixelX % TileCHR.TILE_DIM, pixelY % TileCHR.TILE_DIM, paletteCanvasController.getSelectedColor());

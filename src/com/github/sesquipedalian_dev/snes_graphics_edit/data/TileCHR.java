@@ -64,7 +64,13 @@ public class TileCHR {
             for (int plane = 0; plane < bitDepth; ++plane) {
                 byte accum = 0;
                 for (int y = 0; y < TILE_DIM; ++y) {
-                    accum |= (colorSelected[x][y] & (1 << plane)) << (TILE_DIM - y - 1 - plane);
+                    int shiftBack = TILE_DIM - y - 1 - plane;
+                    System.out.println(String.format("serialize TileCHR to stream; shift for coords y %d plane %d: %d", y, plane, shiftBack));
+                    if(shiftBack < 0) {
+                        accum |= (colorSelected[x][y] & (1 << plane)) >> -shiftBack;
+                    } else {
+                        accum |= (colorSelected[x][y] & (1 << plane)) << shiftBack;
+                    }
                 }
 
                 out.print(String.format("$%02X", accum));
@@ -113,7 +119,12 @@ public class TileCHR {
                     int yMask = 1 << (TILE_DIM - 1 - y);
                     // move the bit back to position in the actual color value (based on which plane we parsing)
                     int shiftBackToPlane = TILE_DIM - 1 - y - plane;
-                    int addToAccum = (planes[plane] & yMask) >> shiftBackToPlane;
+                    int addToAccum;
+                    if(shiftBackToPlane > 0) {
+                        addToAccum = (planes[plane] & yMask) >> shiftBackToPlane;
+                    } else {
+                        addToAccum = (planes[plane] & yMask) << -shiftBackToPlane;
+                    }
                     accum |= addToAccum;
                 }
 

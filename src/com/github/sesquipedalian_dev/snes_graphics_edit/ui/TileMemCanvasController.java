@@ -133,24 +133,6 @@ public class TileMemCanvasController {
 //                    }
                 }
             }
-
-
-
-//            // show base tile outlines on indices that line up with those
-//            for(int x = 0; x < pixelsPerRow(); ++ x) {
-//                for (int y = 0; y < pixelsPerRow(); ++y) {
-//                    int rectX = x * pixelSize;
-//                    int rectY = y * pixelSize;
-//
-//                    if ((zoomSelection < 4) &&
-//                            ((x % TileCHR.TILE_DIM) == 0) &
-//                                    ((y % TileCHR.TILE_DIM) == 0)
-//                            ) {
-//                        gc.setStroke(Color.YELLOW);
-//                        gc.strokeRect(rectX, rectY, pixelSize * TileCHR.TILE_DIM, pixelSize * TileCHR.TILE_DIM);
-//                    }
-//                }
-//            }
         }
     }
 }
