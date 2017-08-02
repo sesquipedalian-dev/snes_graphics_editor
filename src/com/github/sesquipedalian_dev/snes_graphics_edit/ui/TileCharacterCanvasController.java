@@ -38,11 +38,10 @@ public class TileCharacterCanvasController {
     private ChoiceBox zoomSel;
     private Canvas canvas;
     private PaletteCanvasController paletteCanvasController;
-    // upper left tile of data?
-    private int selectedTileRow = 0;
-    private int selectedTileCol = 0;
+    private TileMemCanvasController tileMemCanvasController;
 
-    public TileCharacterCanvasController(ChoiceBox zoomSel, Canvas canvas, PaletteCanvasController paletteCanvasController) {
+    public TileCharacterCanvasController(ChoiceBox zoomSel, Canvas canvas, PaletteCanvasController paletteCanvasController, TileMemCanvasController tileMemCanvasController) {
+        this.tileMemCanvasController = tileMemCanvasController;
         this.zoomSel = zoomSel;
         this.canvas = canvas;
         this.paletteCanvasController = paletteCanvasController;
@@ -186,7 +185,10 @@ public class TileCharacterCanvasController {
                     // when we get into the next tile load it up
                     if(y % TileCHR.TILE_DIM == 0) {
                         try {
-                            currentTile = ed.getTile(selectedTileRow + (x / TileCHR.TILE_DIM), selectedTileCol + (y / TileCHR.TILE_DIM));
+                            currentTile = ed.getTile(
+                                tileMemCanvasController.getSelectedTileRow() + (x / TileCHR.TILE_DIM),
+                                tileMemCanvasController.getSelectedTileCol() + (y / TileCHR.TILE_DIM)
+                            );
                         } catch(Exception e) {
                             // ignore tiles we can't find
                             currentTile = null;

@@ -25,6 +25,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 
 /**
@@ -37,9 +38,16 @@ public class TileMemCanvasController {
     private Button minusBtn;
     private Button plusBtn;
 
-    // TODO manipulate these with the BRICK... MOUSE...
     private int selectedTileRow = 0;
     private int selectedTileCol = 0;
+
+    public int getSelectedTileRow() {
+        return selectedTileRow;
+    }
+
+    public int getSelectedTileCol() {
+        return selectedTileCol;
+    }
 
     public TileMemCanvasController(
         Canvas canvas,
@@ -65,7 +73,19 @@ public class TileMemCanvasController {
         minusBtn.setOnAction(event -> handleMinusBtn(event));
         plusBtn.setOnAction(event -> handlePlusBtn(event));
 
-        // TODO add mouse events
+        canvas.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> handleMouseClick(event));
+    }
+
+    private void handleMouseClick(MouseEvent e) {
+        double mouseX = e.getX();
+        double mouseY = e.getY();
+
+        double tileSizeInPx = canvas.getWidth() / EditingData.TILES_PER_ROW;
+        int tileX = (int) (mouseX / tileSizeInPx);
+        int tileY = (int) (mouseY / tileSizeInPx);
+
+        selectedTileRow = tileX;
+        selectedTileCol = tileY;
     }
 
     private void handleMinusBtn(ActionEvent e) {
