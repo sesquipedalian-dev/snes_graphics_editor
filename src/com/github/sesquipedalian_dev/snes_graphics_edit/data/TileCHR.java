@@ -60,21 +60,24 @@ public class TileCHR {
 
     public void serializeToStream(PrintStream out) {
         out.print(".db ");
-        for (int x = 0; x < TILE_DIM; ++x) {
-            for (int plane = 0; plane < bitDepth; ++plane) {
-                byte accum = 0;
-                for (int y = 0; y < TILE_DIM; ++y) {
-                    int shiftBack = TILE_DIM - y - 1 - plane;
-                    if(shiftBack < 0) {
-                        accum |= (colorSelected[x][y] & (1 << plane)) >> -shiftBack;
-                    } else {
-                        accum |= (colorSelected[x][y] & (1 << plane)) << shiftBack;
+        for (float planeGroup = 0; planeGroup < (float) bitDepth / 2; ++planeGroup) {
+            int startingPlaneForGroup = ((int) planeGroup) * 2;
+            for (int x = 0; x < TILE_DIM; ++x) {
+                for (int plane = startingPlaneForGroup; plane < Math.min(bitDepth, startingPlaneForGroup + 2); ++plane) {
+                    byte accum = 0;
+                    for (int y = 0; y < TILE_DIM; ++y) {
+                        int shiftBack = TILE_DIM - y - 1 - plane;
+                        if (shiftBack < 0) {
+                            accum |= (colorSelected[x][y] & (1 << plane)) >> -shiftBack;
+                        } else {
+                            accum |= (colorSelected[x][y] & (1 << plane)) << shiftBack;
+                        }
                     }
-                }
 
-                out.print(String.format("$%02X", accum));
-                if(!((plane == (bitDepth - 1)) && (x == (TILE_DIM - 1)))) {
-                    out.print(", ");
+                    out.print(String.format("$%02X", accum));
+                    if (!((plane == (bitDepth - 1)) && (x == (TILE_DIM - 1)))) {
+                        out.print(", ");
+                    }
                 }
             }
         }
@@ -101,34 +104,44 @@ public class TileCHR {
         MatchResult r = in.match();
 
         // get back the rows
-        for(int x = 0; x < TILE_DIM; ++x) {
+        for (float planeGroup = 0; planeGroup < (float) bitDepth / 2; ++planeGroup) {
+            int startingPlaneForGroup = ((int) planeGroup) * 2;
 
-            // get all the planes for this row so we can calculate the color values at each y
-            int[] planes = new int[bitDepth];
-            for(int plane = 0; plane < bitDepth; ++plane) {
-                String bString = r.group((x * bitDepth) + plane + 1);
-                int b = Integer.parseInt(bString, 16);
-                planes[plane] = b;
-            }
+            for (int x = 0; x < TILE_DIM; ++x) {
 
-            for(int y = 0; y < TILE_DIM; ++y) {
-                byte accum = 0;
-                for(int plane = 0; plane < bitDepth; ++plane) {
-                    // bit at yMask of plane has one of our bits
-                    int yMask = 1 << (TILE_DIM - 1 - y);
-                    // move the bit back to position in the actual color value (based on which plane we parsing)
-                    int shiftBackToPlane = TILE_DIM - 1 - y - plane;
-                    int addToAccum;
-                    if(shiftBackToPlane > 0) {
-                        addToAccum = (planes[plane] & yMask) >> shiftBackToPlane;
-                    } else {
-                        addToAccum = (planes[plane] & yMask) << -shiftBackToPlane;
-                    }
-                    accum |= addToAccum;
+                // get all the planes for this row so we can calculate the color values at each y
+                int[] planes = new int[Math.min(bitDepth, 2)];
+                for (int plane = 0; plane < Math.min(bitDepth, 2); ++plane) {
+                    int groupIndex = (((int) planeGroup) * TILE_DIM * 2) + // skip all the row data for earlier plane groups
+                            (x * Math.min(bitDepth, 2)) + // skip 2 bytes for each row (unless in one-bit color depth
+                            plane + // first or second byte?
+                            1 // 1-indexed groups
+                            ;
+                    String bString = r.group(groupIndex);
+                    int b = Integer.parseInt(bString, 16);
+                    planes[plane] = b;
                 }
 
-                // store the color we found; the method format takes 1-indexed values instead
-                retVal.selectColor(x, y, accum);
+                for (int y = 0; y < TILE_DIM; ++y) {
+                    byte accum = 0;
+                    for (int plane = startingPlaneForGroup; plane < Math.min(bitDepth, startingPlaneForGroup + 2); ++plane) {
+                        // bit at yMask of plane has one of our bits
+                        int yMask = 1 << (TILE_DIM - 1 - y);
+                        // move the bit back to position in the actual color value (based on which plane we parsing)
+                        int shiftBackToPlane = TILE_DIM - 1 - y - plane;
+                        int addToAccum;
+                        if (shiftBackToPlane > 0) {
+                            addToAccum = (planes[plane % 2] & yMask) >> shiftBackToPlane;
+                        } else {
+                            addToAccum = (planes[plane % 2] & yMask) << -shiftBackToPlane;
+                        }
+                        accum |= addToAccum;
+                    }
+
+                    // store the color we found; the method format takes 1-indexed values instead
+                    int currentColor = retVal.getColorSelected(x, y);
+                    retVal.selectColor(x, y, accum | currentColor);
+                }
             }
         }
 

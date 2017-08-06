@@ -72,7 +72,7 @@
       <file leaf-file-name="GUIController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/GUIController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
+            <state relative-caret-position="646">
               <caret line="72" column="20" lean-forward="false" selection-start-line="72" selection-start-column="11" selection-end-line="72" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -85,15 +85,9 @@
         <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/TileMemCanvasController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="103">
-              <caret line="174" column="0" lean-forward="true" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
+              <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1746#1747#0" expanded="true" />
-                <element signature="e#1784#1785#0" expanded="true" />
-                <element signature="e#1823#1824#0" expanded="true" />
-                <element signature="e#1861#1862#0" expanded="true" />
-                <element signature="e#3607#3608#0" expanded="true" />
-                <element signature="e#3665#3666#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -102,9 +96,63 @@
       <file leaf-file-name="ChoiceBox.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/javafx-src.zip!/javafx/scene/control/ChoiceBox.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
+            <state relative-caret-position="4794">
               <caret line="336" column="19" lean-forward="false" selection-start-line="336" selection-start-column="19" selection-end-line="336" selection-end-column="19" />
-              <folding />
+              <folding>
+                <element signature="e#0#24179#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#3293#3300#0" expanded="false" />
+                <element signature="e#3513#3520#0" expanded="false" />
+                <element signature="e#3739#3746#0" expanded="false" />
+                <element signature="e#3960#3967#0" expanded="false" />
+                <element signature="e#4516#4517#0" expanded="false" />
+                <element signature="e#4576#4577#0" expanded="false" />
+                <element signature="e#7893#7894#0" expanded="false" />
+                <element signature="e#7938#7939#0" expanded="false" />
+                <element signature="e#7991#7992#0" expanded="false" />
+                <element signature="e#8031#8032#0" expanded="false" />
+                <element signature="e#10121#10122#0" expanded="false" />
+                <element signature="e#10166#10167#0" expanded="false" />
+                <element signature="e#10219#10220#0" expanded="false" />
+                <element signature="e#10257#10258#0" expanded="false" />
+                <element signature="e#12112#12132#0" expanded="false" />
+                <element signature="e#14176#14177#0" expanded="false" />
+                <element signature="e#14242#14243#0" expanded="false" />
+                <element signature="e#14295#14296#0" expanded="false" />
+                <element signature="e#14340#14341#0" expanded="false" />
+                <element signature="e#14393#14394#0" expanded="false" />
+                <element signature="e#14434#14435#0" expanded="false" />
+                <element signature="e#15016#15017#0" expanded="false" />
+                <element signature="e#15074#15075#0" expanded="false" />
+                <element signature="e#15119#15120#0" expanded="false" />
+                <element signature="e#15164#15165#0" expanded="false" />
+                <element signature="e#15209#15210#0" expanded="false" />
+                <element signature="e#15251#15252#0" expanded="false" />
+                <element signature="e#15810#15811#0" expanded="false" />
+                <element signature="e#15866#15867#0" expanded="false" />
+                <element signature="e#15911#15912#0" expanded="false" />
+                <element signature="e#15956#15957#0" expanded="false" />
+                <element signature="e#16001#16002#0" expanded="false" />
+                <element signature="e#16041#16042#0" expanded="false" />
+                <element signature="e#16616#16617#0" expanded="false" />
+                <element signature="e#16673#16674#0" expanded="false" />
+                <element signature="e#16718#16719#0" expanded="false" />
+                <element signature="e#16763#16764#0" expanded="false" />
+                <element signature="e#16808#16809#0" expanded="false" />
+                <element signature="e#16849#16850#0" expanded="false" />
+                <element signature="e#17424#17425#0" expanded="false" />
+                <element signature="e#17481#17482#0" expanded="false" />
+                <element signature="e#17526#17527#0" expanded="false" />
+                <element signature="e#17571#17572#0" expanded="false" />
+                <element signature="e#17616#17617#0" expanded="false" />
+                <element signature="e#17657#17658#0" expanded="false" />
+                <element signature="e#18146#18147#0" expanded="false" />
+                <element signature="e#18197#18198#0" expanded="false" />
+                <element signature="e#18274#18275#0" expanded="false" />
+                <element signature="e#18307#18308#0" expanded="false" />
+                <element signature="e#18387#18388#0" expanded="false" />
+                <element signature="e#18436#18437#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -112,9 +160,70 @@
       <file leaf-file-name="GraphicsContext.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/javafx-src.zip!/javafx/scene/canvas/GraphicsContext.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
+            <state relative-caret-position="38624">
               <caret line="2380" column="16" lean-forward="false" selection-start-line="2380" selection-start-column="16" selection-end-line="2380" selection-end-column="16" />
-              <folding />
+              <folding>
+                <element signature="e#0#122993#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#24458#24459#0" expanded="false" />
+                <element signature="e#24488#24489#0" expanded="false" />
+                <element signature="e#26642#26643#0" expanded="false" />
+                <element signature="e#26688#26689#0" expanded="false" />
+                <element signature="e#27919#27920#0" expanded="false" />
+                <element signature="e#27963#27964#0" expanded="false" />
+                <element signature="e#28283#28284#0" expanded="false" />
+                <element signature="e#28315#28316#0" expanded="false" />
+                <element signature="e#37256#37257#0" expanded="false" />
+                <element signature="e#37288#37289#0" expanded="false" />
+                <element signature="e#37989#37990#0" expanded="false" />
+                <element signature="e#38037#38038#0" expanded="false" />
+                <element signature="e#44040#44041#0" expanded="false" />
+                <element signature="e#44081#44082#0" expanded="false" />
+                <element signature="e#45337#45338#0" expanded="false" />
+                <element signature="e#45380#45381#0" expanded="false" />
+                <element signature="e#46597#46598#0" expanded="false" />
+                <element signature="e#46636#46637#0" expanded="false" />
+                <element signature="e#47718#47719#0" expanded="false" />
+                <element signature="e#47754#47755#0" expanded="false" />
+                <element signature="e#48832#48833#0" expanded="false" />
+                <element signature="e#48870#48871#0" expanded="false" />
+                <element signature="e#50225#50226#0" expanded="false" />
+                <element signature="e#50266#50267#0" expanded="false" />
+                <element signature="e#51679#51680#0" expanded="false" />
+                <element signature="e#51718#51719#0" expanded="false" />
+                <element signature="e#53139#53140#0" expanded="false" />
+                <element signature="e#53179#53180#0" expanded="false" />
+                <element signature="e#54590#54591#0" expanded="false" />
+                <element signature="e#54632#54633#0" expanded="false" />
+                <element signature="e#59147#59148#0" expanded="false" />
+                <element signature="e#59189#59190#0" expanded="false" />
+                <element signature="e#60249#60250#0" expanded="false" />
+                <element signature="e#60285#60286#0" expanded="false" />
+                <element signature="e#62066#62067#0" expanded="false" />
+                <element signature="e#62111#62112#0" expanded="false" />
+                <element signature="e#64348#64349#0" expanded="false" />
+                <element signature="e#64389#64390#0" expanded="false" />
+                <element signature="e#65897#65898#0" expanded="false" />
+                <element signature="e#65941#65942#0" expanded="false" />
+                <element signature="e#66604#66605#0" expanded="false" />
+                <element signature="e#66664#66665#0" expanded="false" />
+                <element signature="e#67333#67334#0" expanded="false" />
+                <element signature="e#67395#67396#0" expanded="false" />
+                <element signature="e#70680#70681#0" expanded="false" />
+                <element signature="e#70722#70723#0" expanded="false" />
+                <element signature="e#93087#93088#0" expanded="false" />
+                <element signature="e#93132#93133#0" expanded="false" />
+                <element signature="e#93817#93818#0" expanded="false" />
+                <element signature="e#93864#93865#0" expanded="false" />
+                <element signature="e#108795#108796#0" expanded="false" />
+                <element signature="e#108838#108839#0" expanded="false" />
+                <element signature="e#110822#110823#0" expanded="false" />
+                <element signature="e#110905#110906#0" expanded="false" />
+                <element signature="e#110960#110961#0" expanded="false" />
+                <element signature="e#111025#111026#0" expanded="false" />
+                <element signature="e#121840#121841#0" expanded="false" />
+                <element signature="e#121923#121924#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -122,9 +231,32 @@
       <file leaf-file-name="ButtonBase.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/javafx-src.zip!/javafx/scene/control/ButtonBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
+            <state relative-caret-position="1343">
               <caret line="120" column="58" lean-forward="false" selection-start-line="120" selection-start-column="47" selection-end-line="120" selection-end-column="58" />
-              <folding />
+              <folding>
+                <element signature="e#0#7483#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#1942#1943#0" expanded="false" />
+                <element signature="e#1969#1970#0" expanded="false" />
+                <element signature="e#2208#2209#0" expanded="false" />
+                <element signature="e#2244#2245#0" expanded="false" />
+                <element signature="e#3410#3411#0" expanded="false" />
+                <element signature="e#3489#3490#0" expanded="false" />
+                <element signature="e#3542#3543#0" expanded="false" />
+                <element signature="e#3588#3589#0" expanded="false" />
+                <element signature="e#3641#3642#0" expanded="false" />
+                <element signature="e#3679#3680#0" expanded="false" />
+                <element signature="e#4442#4443#0" expanded="false" />
+                <element signature="e#4508#4509#0" expanded="false" />
+                <element signature="e#4561#4562#0" expanded="false" />
+                <element signature="e#4607#4608#0" expanded="false" />
+                <element signature="e#4660#4661#0" expanded="false" />
+                <element signature="e#4701#4702#0" expanded="false" />
+                <element signature="e#5622#5623#0" expanded="false" />
+                <element signature="e#5652#5653#0" expanded="false" />
+                <element signature="e#5979#5980#0" expanded="false" />
+                <element signature="e#6010#6011#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -133,19 +265,23 @@
         <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/PaletteCanvasController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="14" column="3" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="3" />
+              <caret line="14" column="3" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="3" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="n#!!doc" expanded="false" />
+                <element signature="e#1650#1651#0" expanded="false" />
+                <element signature="e#1688#1689#0" expanded="false" />
+                <element signature="e#1725#1726#0" expanded="false" />
+                <element signature="e#1761#1762#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TileCharacterCanvasController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TileCharacterCanvasController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/TileCharacterCanvasController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="101" column="79" lean-forward="true" selection-start-line="101" selection-start-column="79" selection-end-line="101" selection-end-column="79" />
+            <state relative-caret-position="117">
+              <caret line="89" column="34" lean-forward="true" selection-start-line="89" selection-start-column="34" selection-end-line="89" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -153,11 +289,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TileCHR.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TileCHR.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/data/TileCHR.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="74" column="38" lean-forward="false" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
+            <state relative-caret-position="272">
+              <caret line="121" column="38" lean-forward="true" selection-start-line="121" selection-start-column="38" selection-end-line="121" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -166,8 +302,8 @@
       <file leaf-file-name="EditingData.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/data/EditingData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="189" column="41" lean-forward="false" selection-start-line="189" selection-start-column="28" selection-end-line="189" selection-end-column="41" />
+            <state relative-caret-position="443">
+              <caret line="103" column="56" lean-forward="true" selection-start-line="103" selection-start-column="56" selection-end-line="103" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -184,7 +320,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>add</find>
       <find>Scott</find>
       <find>MenuBar</find>
       <find>GUIController</find>
@@ -214,6 +349,7 @@
       <find>MAX</find>
       <find>TILES_PER</find>
       <find>selectedTileRow</find>
+      <find>retVal.add</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -246,20 +382,20 @@
         <option value="$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/data/Tile.java" />
         <option value="$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/Main.java" />
         <option value="$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/PaletteCanvasController.java" />
-        <option value="$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/data/TileCHR.java" />
         <option value="$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/data/EditingData.java" />
         <option value="$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/GUIController.java" />
         <option value="$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/TileMemCanvasController.java" />
         <option value="$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/TileCharacterCanvasController.java" />
+        <option value="$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/data/TileCHR.java" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="27" />
-    <option name="y" value="48" />
-    <option name="width" value="1769" />
-    <option name="height" value="1250" />
+    <option name="x" value="42" />
+    <option name="y" value="96" />
+    <option name="width" value="1932" />
+    <option name="height" value="1035" />
   </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
@@ -279,7 +415,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -450,8 +587,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -762,7 +898,7 @@
     <option name="totallyTimeSpent" value="1302000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="27" y="48" width="1769" height="1250" extended-state="0" />
+    <frame x="42" y="96" width="1932" height="1035" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -772,16 +908,16 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19320215" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2857143" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25649914" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2560718" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22719142" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46954596" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -808,25 +944,13 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/data/EditingData.java</url>
-          <line>104</line>
+          <url>file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/data/TileCHR.java</url>
+          <line>142</line>
           <properties />
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/TileMemCanvasController.java</url>
-          <line>140</line>
-          <properties />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/TileMemCanvasController.java</url>
-          <line>144</line>
-          <properties />
-          <option name="timeStamp" value="19" />
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="20" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1013,49 +1137,121 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/javafx-src.zip!/javafx/scene/control/ButtonBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
+        <state relative-caret-position="1343">
           <caret line="120" column="58" lean-forward="false" selection-start-line="120" selection-start-column="47" selection-end-line="120" selection-end-column="58" />
-          <folding />
+          <folding>
+            <element signature="e#0#7483#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1942#1943#0" expanded="false" />
+            <element signature="e#1969#1970#0" expanded="false" />
+            <element signature="e#2208#2209#0" expanded="false" />
+            <element signature="e#2244#2245#0" expanded="false" />
+            <element signature="e#3410#3411#0" expanded="false" />
+            <element signature="e#3489#3490#0" expanded="false" />
+            <element signature="e#3542#3543#0" expanded="false" />
+            <element signature="e#3588#3589#0" expanded="false" />
+            <element signature="e#3641#3642#0" expanded="false" />
+            <element signature="e#3679#3680#0" expanded="false" />
+            <element signature="e#4442#4443#0" expanded="false" />
+            <element signature="e#4508#4509#0" expanded="false" />
+            <element signature="e#4561#4562#0" expanded="false" />
+            <element signature="e#4607#4608#0" expanded="false" />
+            <element signature="e#4660#4661#0" expanded="false" />
+            <element signature="e#4701#4702#0" expanded="false" />
+            <element signature="e#5622#5623#0" expanded="false" />
+            <element signature="e#5652#5653#0" expanded="false" />
+            <element signature="e#5979#5980#0" expanded="false" />
+            <element signature="e#6010#6011#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/PaletteCanvasController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="14" column="3" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="3" />
+          <caret line="14" column="3" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="3" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#1650#1651#0" expanded="false" />
+            <element signature="e#1688#1689#0" expanded="false" />
+            <element signature="e#1725#1726#0" expanded="false" />
+            <element signature="e#1761#1762#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/data/TileCHR.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="74" column="38" lean-forward="false" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/data/EditingData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="189" column="41" lean-forward="false" selection-start-line="189" selection-start-column="28" selection-end-line="189" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/javafx-src.zip!/javafx/scene/canvas/GraphicsContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
+        <state relative-caret-position="38624">
           <caret line="2380" column="16" lean-forward="false" selection-start-line="2380" selection-start-column="16" selection-end-line="2380" selection-end-column="16" />
-          <folding />
+          <folding>
+            <element signature="e#0#122993#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#24458#24459#0" expanded="false" />
+            <element signature="e#24488#24489#0" expanded="false" />
+            <element signature="e#26642#26643#0" expanded="false" />
+            <element signature="e#26688#26689#0" expanded="false" />
+            <element signature="e#27919#27920#0" expanded="false" />
+            <element signature="e#27963#27964#0" expanded="false" />
+            <element signature="e#28283#28284#0" expanded="false" />
+            <element signature="e#28315#28316#0" expanded="false" />
+            <element signature="e#37256#37257#0" expanded="false" />
+            <element signature="e#37288#37289#0" expanded="false" />
+            <element signature="e#37989#37990#0" expanded="false" />
+            <element signature="e#38037#38038#0" expanded="false" />
+            <element signature="e#44040#44041#0" expanded="false" />
+            <element signature="e#44081#44082#0" expanded="false" />
+            <element signature="e#45337#45338#0" expanded="false" />
+            <element signature="e#45380#45381#0" expanded="false" />
+            <element signature="e#46597#46598#0" expanded="false" />
+            <element signature="e#46636#46637#0" expanded="false" />
+            <element signature="e#47718#47719#0" expanded="false" />
+            <element signature="e#47754#47755#0" expanded="false" />
+            <element signature="e#48832#48833#0" expanded="false" />
+            <element signature="e#48870#48871#0" expanded="false" />
+            <element signature="e#50225#50226#0" expanded="false" />
+            <element signature="e#50266#50267#0" expanded="false" />
+            <element signature="e#51679#51680#0" expanded="false" />
+            <element signature="e#51718#51719#0" expanded="false" />
+            <element signature="e#53139#53140#0" expanded="false" />
+            <element signature="e#53179#53180#0" expanded="false" />
+            <element signature="e#54590#54591#0" expanded="false" />
+            <element signature="e#54632#54633#0" expanded="false" />
+            <element signature="e#59147#59148#0" expanded="false" />
+            <element signature="e#59189#59190#0" expanded="false" />
+            <element signature="e#60249#60250#0" expanded="false" />
+            <element signature="e#60285#60286#0" expanded="false" />
+            <element signature="e#62066#62067#0" expanded="false" />
+            <element signature="e#62111#62112#0" expanded="false" />
+            <element signature="e#64348#64349#0" expanded="false" />
+            <element signature="e#64389#64390#0" expanded="false" />
+            <element signature="e#65897#65898#0" expanded="false" />
+            <element signature="e#65941#65942#0" expanded="false" />
+            <element signature="e#66604#66605#0" expanded="false" />
+            <element signature="e#66664#66665#0" expanded="false" />
+            <element signature="e#67333#67334#0" expanded="false" />
+            <element signature="e#67395#67396#0" expanded="false" />
+            <element signature="e#70680#70681#0" expanded="false" />
+            <element signature="e#70722#70723#0" expanded="false" />
+            <element signature="e#93087#93088#0" expanded="false" />
+            <element signature="e#93132#93133#0" expanded="false" />
+            <element signature="e#93817#93818#0" expanded="false" />
+            <element signature="e#93864#93865#0" expanded="false" />
+            <element signature="e#108795#108796#0" expanded="false" />
+            <element signature="e#108838#108839#0" expanded="false" />
+            <element signature="e#110822#110823#0" expanded="false" />
+            <element signature="e#110905#110906#0" expanded="false" />
+            <element signature="e#110960#110961#0" expanded="false" />
+            <element signature="e#111025#111026#0" expanded="false" />
+            <element signature="e#121840#121841#0" expanded="false" />
+            <element signature="e#121923#121924#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/GUIController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
+        <state relative-caret-position="646">
           <caret line="72" column="20" lean-forward="false" selection-start-line="72" selection-start-column="11" selection-end-line="72" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1065,35 +1261,99 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/javafx-src.zip!/javafx/scene/control/ChoiceBox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
+        <state relative-caret-position="4794">
           <caret line="336" column="19" lean-forward="false" selection-start-line="336" selection-start-column="19" selection-end-line="336" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/TileMemCanvasController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="174" column="0" lean-forward="true" selection-start-line="174" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
-            <element signature="e#1784#1785#0" expanded="true" />
-            <element signature="e#1823#1824#0" expanded="true" />
-            <element signature="e#1861#1862#0" expanded="true" />
-            <element signature="e#3607#3608#0" expanded="true" />
-            <element signature="e#3665#3666#0" expanded="true" />
+            <element signature="e#0#24179#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3293#3300#0" expanded="false" />
+            <element signature="e#3513#3520#0" expanded="false" />
+            <element signature="e#3739#3746#0" expanded="false" />
+            <element signature="e#3960#3967#0" expanded="false" />
+            <element signature="e#4516#4517#0" expanded="false" />
+            <element signature="e#4576#4577#0" expanded="false" />
+            <element signature="e#7893#7894#0" expanded="false" />
+            <element signature="e#7938#7939#0" expanded="false" />
+            <element signature="e#7991#7992#0" expanded="false" />
+            <element signature="e#8031#8032#0" expanded="false" />
+            <element signature="e#10121#10122#0" expanded="false" />
+            <element signature="e#10166#10167#0" expanded="false" />
+            <element signature="e#10219#10220#0" expanded="false" />
+            <element signature="e#10257#10258#0" expanded="false" />
+            <element signature="e#12112#12132#0" expanded="false" />
+            <element signature="e#14176#14177#0" expanded="false" />
+            <element signature="e#14242#14243#0" expanded="false" />
+            <element signature="e#14295#14296#0" expanded="false" />
+            <element signature="e#14340#14341#0" expanded="false" />
+            <element signature="e#14393#14394#0" expanded="false" />
+            <element signature="e#14434#14435#0" expanded="false" />
+            <element signature="e#15016#15017#0" expanded="false" />
+            <element signature="e#15074#15075#0" expanded="false" />
+            <element signature="e#15119#15120#0" expanded="false" />
+            <element signature="e#15164#15165#0" expanded="false" />
+            <element signature="e#15209#15210#0" expanded="false" />
+            <element signature="e#15251#15252#0" expanded="false" />
+            <element signature="e#15810#15811#0" expanded="false" />
+            <element signature="e#15866#15867#0" expanded="false" />
+            <element signature="e#15911#15912#0" expanded="false" />
+            <element signature="e#15956#15957#0" expanded="false" />
+            <element signature="e#16001#16002#0" expanded="false" />
+            <element signature="e#16041#16042#0" expanded="false" />
+            <element signature="e#16616#16617#0" expanded="false" />
+            <element signature="e#16673#16674#0" expanded="false" />
+            <element signature="e#16718#16719#0" expanded="false" />
+            <element signature="e#16763#16764#0" expanded="false" />
+            <element signature="e#16808#16809#0" expanded="false" />
+            <element signature="e#16849#16850#0" expanded="false" />
+            <element signature="e#17424#17425#0" expanded="false" />
+            <element signature="e#17481#17482#0" expanded="false" />
+            <element signature="e#17526#17527#0" expanded="false" />
+            <element signature="e#17571#17572#0" expanded="false" />
+            <element signature="e#17616#17617#0" expanded="false" />
+            <element signature="e#17657#17658#0" expanded="false" />
+            <element signature="e#18146#18147#0" expanded="false" />
+            <element signature="e#18197#18198#0" expanded="false" />
+            <element signature="e#18274#18275#0" expanded="false" />
+            <element signature="e#18307#18308#0" expanded="false" />
+            <element signature="e#18387#18388#0" expanded="false" />
+            <element signature="e#18436#18437#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/TileCharacterCanvasController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="101" column="79" lean-forward="true" selection-start-line="101" selection-start-column="79" selection-end-line="101" selection-end-column="79" />
+        <state relative-caret-position="117">
+          <caret line="89" column="34" lean-forward="true" selection-start-line="89" selection-start-column="34" selection-end-line="89" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/ui/TileMemCanvasController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/data/EditingData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="103" column="56" lean-forward="true" selection-start-line="103" selection-start-column="56" selection-end-line="103" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/sesquipedalian_dev/snes_graphics_edit/data/TileCHR.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="121" column="38" lean-forward="true" selection-start-line="121" selection-start-column="38" selection-end-line="121" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
